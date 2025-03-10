@@ -1,0 +1,37 @@
+body{
+    background-color: #90EE90;
+    font-family: perpetua, Helvetica, serif; 
+    text-align: center;
+    margin-top: 2.5em;
+ }
+
+img{
+    height: 15em;
+    width: 15em;
+    margin: 1em; 
+ }
+
+h2 {
+   margin: 3em;
+ }
+   
+footer{
+   margin: 1em;
+   bottom: 0px;
+   position: static;
+   float: right;
+ }
+
+.animal_flexbox {
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+ }
+
+.animal {
+   margin: 1em;
+ }
+
+ .human {
+   margin-top: 5em;
+ }
