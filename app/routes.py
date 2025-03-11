@@ -11,3 +11,5 @@ def animal_click():
     animal = data['animal']
     print(f"Server received: {animal}")
     return jsonify ({"message": "Animal click received"})
+
+print("routes is working")
