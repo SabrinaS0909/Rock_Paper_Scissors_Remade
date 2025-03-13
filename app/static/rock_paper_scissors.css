@@ -23,8 +23,12 @@ footer{
  }
 
 .start {
-  visibility: block
+  display: block
 }
+.animal_chosen {
+  display: none
+}
+
 .animal_flexbox {
    display: flex;
    justify-content: center;
