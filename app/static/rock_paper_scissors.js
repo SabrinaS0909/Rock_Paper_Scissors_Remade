@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
         button.addEventListener("click", function () {
             console.log("Button clicked: " + this.dataset.animal);
             sendDataToBackend(this.dataset.animal);
+            document.getElementById("start").style.visibility = "hidden";
         });
     });
 });

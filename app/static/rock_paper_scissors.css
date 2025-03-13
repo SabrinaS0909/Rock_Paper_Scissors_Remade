@@ -22,6 +22,9 @@ footer{
    float: right;
  }
 
+.start {
+  visibility: block
+}
 .animal_flexbox {
    display: flex;
    justify-content: center;
@@ -32,6 +35,6 @@ footer{
    margin: 1em;
  }
 
- .human {
+.human {
    margin-top: 5em;
  }
