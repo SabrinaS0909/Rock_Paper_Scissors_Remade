@@ -55,8 +55,15 @@
                 </div>
             
         </div>
-        <div class = "animal_chosen">
-            
+        <div class = "animal_chosen" id = "animal_chosen">
+            <h1>It's {player_choice} vs {computer_choice}!!!</h1>
+            <img src="{{ url_for('static', filename='img/{player_choice}.jpg') }}" alt="There should be an angry {player_choice} here.">
+            <img src="{{ url_for('static', filename='img/{vs image}.jpg') }}" alt="vs">
+            <img src="{{ url_for('static', filename='img/{computer_choice}.jpg') }}" alt="There should be an angry {computer_choice} here.">
+            <button>Let's go!/It's on!/Cower before me!/You're too weak!/I'm scared!</button> <!--Use the randomizer to make button randomly display one of these every time-->
+            <p>{Outcome depending on the player's choice and computer's choice.}</p> <!--This should only show up once the above button is clicked-->
+            <p>Play again?</p>
+            <button>Yes, I'm ready!</button><button>Nah, I'm good.</button>             
         </div>
         <footer>
             <a href="index.html">Go back to home page</a>
