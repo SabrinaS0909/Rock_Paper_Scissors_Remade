@@ -23,10 +23,16 @@ footer{
  }
 
 .start {
-  display: block
+  display: block;
 }
+
 .animal_chosen {
-  display: none
+  display: none;
+  margin-top: 6em;
+}
+
+.outcome {
+  display: none;
 }
 
 .animal_flexbox {
@@ -41,4 +47,14 @@ footer{
 
 .human {
    margin-top: 5em;
+ }
+
+ .vs {
+  margin-left: 0em;
+  margin-right: 0em;
+  width: 7em;
+ }
+
+ .lets_go {
+  margin: 2em;
  }

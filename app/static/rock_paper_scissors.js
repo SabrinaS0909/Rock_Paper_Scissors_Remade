@@ -16,7 +16,11 @@ function sendDataToBackend(animal) {
         body: JSON.stringify({ animal: animal })
     })
     .then(response => response.json())
-    .then(data => console.log("Server response:", data))
+    .then(data => {
+        const message = `It's ${data.player} vs ${data.computer}!!`;
+        document.getElementById("game-message").textContent = message;
+        console.log(`It's ${data.player} vs ${data.computer}!!`)
+    })
     .catch(error => console.error("Error:", error));
 }
 
