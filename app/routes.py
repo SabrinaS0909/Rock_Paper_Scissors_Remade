@@ -1,6 +1,6 @@
 from app import app
 from flask import render_template, request, jsonify
-from app.utils import get_animal_choices
+from app.utils import get_animal_choices, random_button
 
 @app.route('/')
 def index():
@@ -12,5 +12,11 @@ def animal_click():
     player_action, computer_action = get_animal_choices(data)
     print(f"It's {player_action} vs {computer_action}!!")
     return jsonify ({"player": player_action, "computer": computer_action})
+
+@app.route('/random_button', methods = ['POST'])
+def get_random_button():
+    button_dialogue = random_button()
+    print(button_dialogue)
+    return jsonify ({"random_button": button_dialogue})
 
 print("routes is working")
