@@ -20,7 +20,24 @@ function sendDataToBackend(animal) {
         const message = `It's ${data.player} vs ${data.computer}!!`;
         document.getElementById("game-message").textContent = message;
         console.log(`It's ${data.player} vs ${data.computer}!!`)
+
+        sendRandomButtonToBackend();
     })
     .catch(error => console.error("Error:", error));
 }
 
+function sendRandomButtonToBackend() {
+    fetch("/random_button", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" }
+    })
+    .then(response => response.json())
+    .then(data => {
+        const message = data.random_button;
+        document.getElementById("lets_go").textContent = message;
+        console.log(message);
+    })
+    .catch(error => console.error("Error:", error));
+}
+
+document.addEventListener
