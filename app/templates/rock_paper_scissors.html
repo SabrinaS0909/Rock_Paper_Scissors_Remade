@@ -60,7 +60,7 @@
             <img src="{{ url_for('static', filename='img/{player_choice}.jpg') }}" alt="There should be an angry {player_choice} here.">
             <img class = "vs" src="{{ url_for('static', filename='img/vs.jpg') }}" alt="vs">
             <img src="{{ url_for('static', filename='img/{computer_choice}.jpg') }}" alt="There should be an angry {computer_choice} here.">
-            <button class = "lets_go">Let's go!/It's on!/Cower before me!/You're too weak!/I'm scared!</button> <!--Use the randomizer to make button randomly display one of these every time-->
+            <button class = "lets_go" id = "lets_go"></button>
         </div>
         <div class = "outcome" id = "outcome">
             <p>{Outcome depending on the player's choice and computer's choice.}</p> <!--This will become an image-->
