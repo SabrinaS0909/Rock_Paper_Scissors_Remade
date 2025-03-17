@@ -57,10 +57,18 @@
         </div>
         <div class = "animal_chosen" id = "animal_chosen">
             <h1 id = "game-message"></h1>
-            <img src="{{ url_for('static', filename='img/{player_choice}.jpg') }}" alt="There should be an angry {player_choice} here.">
-            <img class = "vs" src="{{ url_for('static', filename='img/vs.jpg') }}" alt="vs">
-            <img src="{{ url_for('static', filename='img/{computer_choice}.jpg') }}" alt="There should be an angry {computer_choice} here.">
-            <button class = "lets_go" id = "lets_go"></button>
+            <div class = "a">
+                <div class = "b">
+                    <img class = "vs_animal" src="{{ url_for('static', filename='img/wolf.jpg') }}" alt="There should be an angry {player_choice} here.">
+                </div>
+            </div>
+            <img class = "vs" src="{{ url_for('static', filename='img/vs.png') }}" alt="vs">
+            <div class = "a">
+                <div class = "b">
+                    <img class = "vs_animal" src="{{ url_for('static', filename='img/wolf.jpg') }}" alt="There should be an angry {computer_choice} here.">
+                </div>
+            </div>
+            <br><button class = "lets_go" id = "lets_go"></button>
         </div>
         <div class = "outcome" id = "outcome">
             <p>{Outcome depending on the player's choice and computer's choice.}</p> <!--This will become an image-->
