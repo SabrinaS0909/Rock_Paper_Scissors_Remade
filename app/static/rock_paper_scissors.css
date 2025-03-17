@@ -49,12 +49,24 @@ footer{
    margin-top: 5em;
  }
 
- .vs {
-  margin-left: 0em;
-  margin-right: 0em;
-  width: 7em;
- }
+.vs {
+  margin: 1em 0em 1em 0em;
+  width: 10em;
+  height: 15em;
+}
 
- .lets_go {
-  margin: 2em;
+.a {
+  border: 5px white solid;
+  display: inline-block;
  }
+.b {
+  border: 3px rgb(141, 232, 255) solid;
+  display: inline-block;
+}
+.vs_animal {
+  margin: 0em;
+}
+
+.lets_go {
+  margin: 2em;
+}
