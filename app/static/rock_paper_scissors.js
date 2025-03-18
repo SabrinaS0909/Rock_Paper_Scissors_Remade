@@ -19,6 +19,8 @@ function sendDataToBackend(animal) {
     .then(data => {
         const message = `It's ${data.player} vs ${data.computer}!!`;
         document.getElementById("game-message").textContent = message;
+        document.getElementById("player_choice_img").src = `/static/img/${data.player} fighting.jpg`;
+        document.getElementById("computer_choice_img").src = `/static/img/${data.computer} fighting.jpg`;
         console.log(`It's ${data.player} vs ${data.computer}!!`)
 
         sendRandomButtonToBackend();

@@ -50,7 +50,7 @@ footer{
  }
 
 .vs {
-  margin: 1em 0em 1em 0em;
+  margin: 1em 0em 0em 0em;
   width: 10em;
   height: 15em;
 }
@@ -62,9 +62,11 @@ footer{
 .b {
   border: 3px rgb(141, 232, 255) solid;
   display: inline-block;
+  display: block;
 }
 .vs_animal {
   margin: 0em;
+  display: block;
 }
 
 .lets_go {
