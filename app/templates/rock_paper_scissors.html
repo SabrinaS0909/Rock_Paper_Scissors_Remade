@@ -59,13 +59,13 @@
             <h1 id = "game-message"></h1>
             <div class = "a">
                 <div class = "b">
-                    <img class = "vs_animal" src="{{ url_for('static', filename='img/wolf.jpg') }}" alt="There should be an angry {player_choice} here.">
+                    <img id = "player_choice_img" class = "vs_animal" alt="There should be an angry {player_choice} here.">
                 </div>
             </div>
             <img class = "vs" src="{{ url_for('static', filename='img/vs.png') }}" alt="vs">
             <div class = "a">
                 <div class = "b">
-                    <img class = "vs_animal" src="{{ url_for('static', filename='img/wolf.jpg') }}" alt="There should be an angry {computer_choice} here.">
+                    <img id = "computer_choice_img" class = "vs_animal" alt="There should be an angry {computer_choice} here.">
                 </div>
             </div>
             <br><button class = "lets_go" id = "lets_go"></button>
