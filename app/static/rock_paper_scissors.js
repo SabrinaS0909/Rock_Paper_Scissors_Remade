@@ -23,6 +23,8 @@ function sendDataToBackend(animal) {
         document.getElementById("computer_choice_img").src = `/static/img/${data.computer} fighting.jpg`;
         console.log(`It's ${data.player} vs ${data.computer}!!`)
 
+        document.getElementById("computer_choice_img").classList.add("flip");
+
         sendRandomButtonToBackend();
     })
     .catch(error => console.error("Error:", error));

@@ -22,6 +22,17 @@ footer{
    float: right;
  }
 
+button {
+  background-color: rgb(141, 232, 255);
+  border: 5px white solid;
+  font-family: perpetua, Helvetica, serif;
+  font-weight: bold;
+}
+button:hover {
+  background-color: rgb(83, 154, 172);
+  border: 4px rgb(146, 146, 146) solid;
+}
+
 .start {
   display: block;
 }
@@ -71,4 +82,9 @@ footer{
 
 .lets_go {
   margin: 2em;
+  font-size: 15px;
+}
+
+.flip {
+  transform: scaleX(-1)
 }
