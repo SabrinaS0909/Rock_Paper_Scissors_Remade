@@ -1,0 +1,83 @@
+body{
+    background-color: #90EE90;
+    font-family: perpetua, Helvetica, serif; 
+    text-align: center;
+    margin-top: 2.5em;
+ }
+
+img{
+    height: 15em;
+    width: 15em;
+    margin: 1em; 
+ }
+
+h2 {
+   margin: 3em;
+ }
+   
+footer{
+   margin: 1em;
+   bottom: 0px;
+   position: static;
+   float: right;
+ }
+
+button {
+  background-color: rgb(141, 232, 255);
+  border: 5px white solid;
+}
+button:hover {
+  background-color: rgb(83, 154, 172);
+  border: 4px rgb(146, 146, 146) solid;
+}
+
+.start {
+  display: block;
+}
+
+.animal_chosen {
+  display: none;
+  margin-top: 6em;
+}
+
+.outcome {
+  display: none;
+}
+
+.animal_flexbox {
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+ }
+
+.animal {
+   margin: 1em;
+ }
+
+.human {
+   margin-top: 5em;
+ }
+
+.vs {
+  margin: 1em 0em 0em 0em;
+  width: 10em;
+  height: 15em;
+}
+
+.a {
+  border: 5px white solid;
+  display: inline-block;
+ }
+.b {
+  border: 3px rgb(141, 232, 255) solid;
+  display: inline-block;
+  display: block;
+}
+.vs_animal {
+  margin: 0em;
+  display: block;
+}
+
+.lets_go {
+  margin: 2em;
+}
