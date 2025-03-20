@@ -1,10 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll(".animal-button").forEach(button => {
+    document.querySelectorAll(".animal_button").forEach(button => {
         button.addEventListener("click", function () {
             console.log("Button clicked: " + this.dataset.animal);
             sendDataToBackend(this.dataset.animal);
             document.getElementById("start").style.display = "none";
             document.getElementById("animal_chosen").style.display = "block";
+        });
+    });
+    document.querySelectorAll(".lets_go").forEach(button => {
+        button.addEventListener("click", function () {
+            console.log("Rando Button Clicked");
+            document.getElementById("animal_chosen").style.display = "none";
+            document.getElementById("outcome").style.display = "block";
         });
     });
 });
@@ -18,7 +25,7 @@ function sendDataToBackend(animal) {
     .then(response => response.json())
     .then(data => {
         const message = `It's ${data.player} vs ${data.computer}!!`;
-        document.getElementById("game-message").textContent = message;
+        document.getElementById("game_message").textContent = message;
         document.getElementById("player_choice_img").src = `/static/img/${data.player} fighting.jpg`;
         document.getElementById("computer_choice_img").src = `/static/img/${data.computer} fighting.jpg`;
         console.log(`It's ${data.player} vs ${data.computer}!!`)
