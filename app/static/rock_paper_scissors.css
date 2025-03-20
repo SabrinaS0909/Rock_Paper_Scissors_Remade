@@ -88,3 +88,10 @@ button:hover {
 .flip {
   transform: scaleX(-1)
 }
+
+.winner_image {
+  border: 2px solid white;
+  width: 40em;
+  height: 25em;
+  margin: 5em auto 1em auto;
+}
