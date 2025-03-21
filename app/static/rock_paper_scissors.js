@@ -51,4 +51,3 @@ function sendRandomButtonToBackend() {
     .catch(error => console.error("Error:", error));
 }
 
-document.addEventListener
