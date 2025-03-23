@@ -28,7 +28,69 @@ def outcome_possibilities(player_action, computer_action):
         else:
             print("wild card")
     elif player_action == "bun":
+        if computer_action == "bee":
+            print("In a battle for territory where the prize is land full of flowers which are great for hiding from predators, as wells as siphoning nectar, the bun calls in reinforcements and quickly there are too many to drive off with stings and pheramones. The buns claim the meadow of flowers. You lose!\n")
+        elif computer_action == "bun":
+            print("Tie")
+        elif computer_action == "corvid":
+            print("Corvid eats the bee. You lose!\n")
+        elif computer_action == "cat":
+            print("Despite a well calculated swat, the bee outmanuervers the cat and manages to sting it right in the offending paw, sending the cat running. You win!\n")
+        elif computer_action == "wolf":
+            print("The wolf gets stung in the muzz and looks silly the rest of the day. You win!\n")
+        else:
+            print("wild card")
     elif player_action == "corvid":
+        if computer_action == "bee":
+            print("In a battle for territory where the prize is land full of flowers which are great for hiding from predators, as wells as siphoning nectar, the bun calls in reinforcements and quickly there are too many to drive off with stings and pheramones. The buns claim the meadow of flowers. You lose!\n")
+        elif computer_action == "bun":
+            print("Corvid eats the bee. You lose!\n")
+        elif computer_action == "corvid":
+            print("Tie")
+        elif computer_action == "cat":
+            print("Despite a well calculated swat, the bee outmanuervers the cat and manages to sting it right in the offending paw, sending the cat running. You win!\n")
+        elif computer_action == "wolf":
+            print("The wolf gets stung in the muzz and looks silly the rest of the day. You win!\n")
+        else:
+            print("wild card")
     elif player_action == "cat":
+        if computer_action == "bee":
+            print("In a battle for territory where the prize is land full of flowers which are great for hiding from predators, as wells as siphoning nectar, the bun calls in reinforcements and quickly there are too many to drive off with stings and pheramones. The buns claim the meadow of flowers. You lose!\n")
+        elif computer_action == "bun":
+            print("Corvid eats the bee. You lose!\n")
+        elif computer_action == "corvid":
+            print("Despite a well calculated swat, the bee outmanuervers the cat and manages to sting it right in the offending paw, sending the cat running. You win!\n")
+        elif computer_action == "cat":
+            print("Tie")
+        elif computer_action == "wolf":
+            print("The wolf gets stung in the muzz and looks silly the rest of the day. You win!\n")
+        else:
+            print("wild card")
     elif player_action == "wolf":
+        if computer_action == "bee":
+            print("In a battle for territory where the prize is land full of flowers which are great for hiding from predators, as wells as siphoning nectar, the bun calls in reinforcements and quickly there are too many to drive off with stings and pheramones. The buns claim the meadow of flowers. You lose!\n")
+        elif computer_action == "bun":
+            print("Corvid eats the bee. You lose!\n")
+        elif computer_action == "corvid":
+            print("The wolf gets stung in the muzz and looks silly the rest of the day. You win!\n")
+        elif computer_action == "cat":
+            print("Despite a well calculated swat, the bee outmanuervers the cat and manages to sting it right in the offending paw, sending the cat running. You win!\n")
+        elif computer_action == "wolf":
+            print("Tie")
+        else:
+            print("wild card")
+    elif player_action == "human":
+        if computer_action == "bee":
+            print("Bee Wild Card")
+        elif computer_action == "bun":
+            print("Bun Wild Card")
+        elif computer_action == "corvid":
+            print("Corvid Wild Card")
+        elif computer_action == "cat":
+            print("Cat Wild Card")
+        elif computer_action == "wolf":
+            print("Wolf Wild Card")
+        else:
+            print("Human Tie")
     else:
+        raise ValueError(f"Unexpected input: player={player_action}, computer={computer_action}")
