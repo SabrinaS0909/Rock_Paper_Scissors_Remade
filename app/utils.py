@@ -13,84 +13,91 @@ def random_button():
     button_dialogue = random.choice(possible_buttons)
     return button_dialogue
 
+
+
+"""
 def outcome_possibilities(player_action, computer_action):
+    print("outcome function is working")
     if player_action == "bee":
         if computer_action == "bee":
-            print("Tie")
+            outcome_dialogue = "Tie"
         elif computer_action == "bun":
-            print("In a battle for territory where the prize is land full of flowers which are great for hiding from predators, as wells as siphoning nectar, the bun calls in reinforcements and quickly there are too many to drive off with stings and pheramones. The buns claim the meadow of flowers. You lose!\n")
+            outcome_dialogue = "In a battle for territory where the prize is land full of flowers which are great for hiding from predators, as wells as siphoning nectar, the bun calls in reinforcements and quickly there are too many to drive off with stings and pheramones. The buns claim the meadow of flowers. You lose!\n"
         elif computer_action == "corvid":
-            print("Corvid eats the bee. You lose!\n")
+            outcome_dialogue = "Corvid eats the bee. You lose!\n"
         elif computer_action == "cat":
-            print("Despite a well calculated swat, the bee outmanuervers the cat and manages to sting it right in the offending paw, sending the cat running. You win!\n")
+            outcome_dialogue = "Despite a well calculated swat, the bee outmanuervers the cat and manages to sting it right in the offending paw, sending the cat running. You win!\n"
         elif computer_action == "wolf":
-            print("The wolf gets stung in the muzz and looks silly the rest of the day. You win!\n")
+            outcome_dialogue = "The wolf gets stung in the muzz and looks silly the rest of the day. You win!\n"
         else:
-            print("wild card")
+            outcome_dialogue = "wild card"
     elif player_action == "bun":
         if computer_action == "bee":
-            print("In a battle for territory where the prize is land full of flowers which are great for hiding from predators, as wells as siphoning nectar, the bun calls in reinforcements and quickly there are too many to drive off with stings and pheramones. The buns claim the meadow of flowers. You lose!\n")
+            outcome_dialogue = "In a battle for territory where the prize is land full of flowers which are great for hiding from predators, as wells as siphoning nectar, the bun calls in reinforcements and quickly there are too many to drive off with stings and pheramones. The buns claim the meadow of flowers. You lose!\n"
         elif computer_action == "bun":
-            print("Tie")
+            outcome_dialogue = "Tie"
         elif computer_action == "corvid":
-            print("Corvid eats the bee. You lose!\n")
+            outcome_dialogue = "Corvid eats the bee. You lose!\n"
         elif computer_action == "cat":
-            print("Despite a well calculated swat, the bee outmanuervers the cat and manages to sting it right in the offending paw, sending the cat running. You win!\n")
+            outcome_dialogue = "Despite a well calculated swat, the bee outmanuervers the cat and manages to sting it right in the offending paw, sending the cat running. You win!\n"
         elif computer_action == "wolf":
-            print("The wolf gets stung in the muzz and looks silly the rest of the day. You win!\n")
+            outcome_dialogue = "The wolf gets stung in the muzz and looks silly the rest of the day. You win!\n"
         else:
-            print("wild card")
+            outcome_dialogue = "wild card"
     elif player_action == "corvid":
         if computer_action == "bee":
-            print("In a battle for territory where the prize is land full of flowers which are great for hiding from predators, as wells as siphoning nectar, the bun calls in reinforcements and quickly there are too many to drive off with stings and pheramones. The buns claim the meadow of flowers. You lose!\n")
+            outcome_dialogue = "In a battle for territory where the prize is land full of flowers which are great for hiding from predators, as wells as siphoning nectar, the bun calls in reinforcements and quickly there are too many to drive off with stings and pheramones. The buns claim the meadow of flowers. You lose!\n"
         elif computer_action == "bun":
-            print("Corvid eats the bee. You lose!\n")
+            outcome_dialogue = "Corvid eats the bee. You lose!\n"
         elif computer_action == "corvid":
-            print("Tie")
+            outcome_dialogue = "Tie"
         elif computer_action == "cat":
-            print("Despite a well calculated swat, the bee outmanuervers the cat and manages to sting it right in the offending paw, sending the cat running. You win!\n")
+            outcome_dialogue = "Despite a well calculated swat, the bee outmanuervers the cat and manages to sting it right in the offending paw, sending the cat running. You win!\n"
         elif computer_action == "wolf":
-            print("The wolf gets stung in the muzz and looks silly the rest of the day. You win!\n")
+            outcome_dialogue = "The wolf gets stung in the muzz and looks silly the rest of the day. You win!\n"
         else:
-            print("wild card")
+            outcome_dialogue = "wild card"
     elif player_action == "cat":
         if computer_action == "bee":
-            print("In a battle for territory where the prize is land full of flowers which are great for hiding from predators, as wells as siphoning nectar, the bun calls in reinforcements and quickly there are too many to drive off with stings and pheramones. The buns claim the meadow of flowers. You lose!\n")
+            outcome_dialogue = "In a battle for territory where the prize is land full of flowers which are great for hiding from predators, as wells as siphoning nectar, the bun calls in reinforcements and quickly there are too many to drive off with stings and pheramones. The buns claim the meadow of flowers. You lose!\n"
         elif computer_action == "bun":
-            print("Corvid eats the bee. You lose!\n")
+            outcome_dialogue = "Corvid eats the bee. You lose!\n"
         elif computer_action == "corvid":
-            print("Despite a well calculated swat, the bee outmanuervers the cat and manages to sting it right in the offending paw, sending the cat running. You win!\n")
+            outcome_dialogue = "Despite a well calculated swat, the bee outmanuervers the cat and manages to sting it right in the offending paw, sending the cat running. You win!\n"
         elif computer_action == "cat":
-            print("Tie")
+            outcome_dialogue = "Tie"
         elif computer_action == "wolf":
-            print("The wolf gets stung in the muzz and looks silly the rest of the day. You win!\n")
+            outcome_dialogue = "The wolf gets stung in the muzz and looks silly the rest of the day. You win!\n"
         else:
-            print("wild card")
+            outcome_dialogue = "wild card"
     elif player_action == "wolf":
         if computer_action == "bee":
-            print("In a battle for territory where the prize is land full of flowers which are great for hiding from predators, as wells as siphoning nectar, the bun calls in reinforcements and quickly there are too many to drive off with stings and pheramones. The buns claim the meadow of flowers. You lose!\n")
+            outcome_dialogue = "In a battle for territory where the prize is land full of flowers which are great for hiding from predators, as wells as siphoning nectar, the bun calls in reinforcements and quickly there are too many to drive off with stings and pheramones. The buns claim the meadow of flowers. You lose!\n"
         elif computer_action == "bun":
-            print("Corvid eats the bee. You lose!\n")
+            outcome_dialogue = "Corvid eats the bee. You lose!\n"
         elif computer_action == "corvid":
-            print("The wolf gets stung in the muzz and looks silly the rest of the day. You win!\n")
+            outcome_dialogue = "The wolf gets stung in the muzz and looks silly the rest of the day. You win!\n"
         elif computer_action == "cat":
-            print("Despite a well calculated swat, the bee outmanuervers the cat and manages to sting it right in the offending paw, sending the cat running. You win!\n")
+            outcome_dialogue = "Despite a well calculated swat, the bee outmanuervers the cat and manages to sting it right in the offending paw, sending the cat running. You win!\n"
         elif computer_action == "wolf":
-            print("Tie")
+            outcome_dialogue = "Tie"
         else:
-            print("wild card")
+            outcome_dialogue = "wild card"
     elif player_action == "human":
         if computer_action == "bee":
-            print("Bee Wild Card")
+            outcome_dialogue = "Bee Wild Card"
         elif computer_action == "bun":
-            print("Bun Wild Card")
+            outcome_dialogue = "Bun Wild Card"
         elif computer_action == "corvid":
-            print("Corvid Wild Card")
+            outcome_dialogue = "Corvid Wild Card"
         elif computer_action == "cat":
-            print("Cat Wild Card")
+            outcome_dialogue = "Cat Wild Card"
         elif computer_action == "wolf":
-            print("Wolf Wild Card")
+            outcome_dialogue = "Wolf Wild Card"
         else:
-            print("Human Tie")
+            outcome_dialogue = "Human Tie"
     else:
         raise ValueError(f"Unexpected input: player={player_action}, computer={computer_action}")
+    
+    return outcome_dialogue
+"""
