@@ -50,17 +50,3 @@ function sendRandomButtonToBackend() {
     })
     .catch(error => console.error("Error:", error));
 }
-
-function sendDialogueOutcomeToBackend() {
-    fetch("/get_outcome", {
-         method: "POST", 
-         headers: { "Content-Type": "application/json" }
-    })
-    .then(response => response.json())
-    .then(data => {
-         const outcome_message = data.outcome;
-         document.getElementById("outcome_dialogue").textContent = outcome_message;
-         console.log(outcome_message);
-    })
-    .catch(error => console.error("Error:", error));
-}
