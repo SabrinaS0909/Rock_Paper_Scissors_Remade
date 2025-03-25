@@ -1,10 +1,14 @@
 //All Button Clicks
 document.addEventListener("DOMContentLoaded", function () {
+    var starting_grounds = document.getElementById("start");
+    var confirm_close = document.querySelector(".confirm_close");
+    var outcome_window = document.getElementById("outcome");
+
     document.querySelectorAll(".animal_button").forEach(button => {
         button.addEventListener("click", function () {
             console.log("Button clicked: " + this.dataset.animal);
             sendDataToBackend(this.dataset.animal);
-            document.getElementById("start").style.display = "none";
+            starting_grounds.style.display = "none";
             document.getElementById("animal_chosen").style.display = "block";
         });
     });
@@ -13,11 +17,10 @@ document.addEventListener("DOMContentLoaded", function () {
         button.addEventListener("click", function () {
             console.log("Rando Button Clicked");
             document.getElementById("animal_chosen").style.display = "none";
-            document.getElementById("outcome").style.display = "block";
+            outcome_window.style.display = "block";
         });
     });
 
-    var confirm_close = document.querySelector(".confirm_close")
     document.querySelectorAll(".close_game").forEach(button => {
         button.addEventListener("click", function () {
             console.log("Opened confirmation prompt.")
@@ -35,13 +38,21 @@ document.addEventListener("DOMContentLoaded", function () {
             confirm_close.style.display = "none";
             console.log("Closed confirmation prompt via clicking window.")
         }
-    }
+    };
     document.querySelectorAll(".confirmation").forEach(button => {
         button.addEventListener("click", function () {
             console.log("Exited game successfully.")
             window.location.href = "404" //We will change this to the homepage once you get it on your website
         });
     });
+
+    document.querySelectorAll(".replay").forEach(button => {
+        button.addEventListener("click", function() {
+            console.log("Restarting...");
+            outcome_window.style.display = "none";
+            starting_grounds.style.display = "block";
+        })
+    })
 });
 
 //All functions that send data to the backend
