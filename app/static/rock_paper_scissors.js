@@ -1,3 +1,4 @@
+//All Button Clicks
 document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll(".animal_button").forEach(button => {
         button.addEventListener("click", function () {
@@ -7,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("animal_chosen").style.display = "block";
         });
     });
+
     document.querySelectorAll(".lets_go").forEach(button => {
         button.addEventListener("click", function () {
             console.log("Rando Button Clicked");
@@ -14,8 +16,35 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("outcome").style.display = "block";
         });
     });
+
+    var confirm_close = document.querySelector(".confirm_close")
+    document.querySelectorAll(".close_game").forEach(button => {
+        button.addEventListener("click", function () {
+            console.log("Opened confirmation prompt.")
+            confirm_close.style.display = "block";
+        });
+    });
+    document.querySelectorAll(".close").forEach(button => {
+        button.addEventListener("click", function () {
+            console.log("Closed confirmation prompt.");
+            confirm_close.style.display = "none";
+        });
+    });
+    window.onclick = function(event) {
+        if (event.target == confirm_close) {
+            confirm_close.style.display = "none";
+            console.log("Closed confirmation prompt via clicking window.")
+        }
+    }
+    document.querySelectorAll(".confirmation").forEach(button => {
+        button.addEventListener("click", function () {
+            console.log("Exited game successfully.")
+            window.location.href = "404" //We will change this to the homepage once you get it on your website
+        });
+    });
 });
 
+//All functions that send data to the backend
 function sendDataToBackend(animal) {
     fetch("/animal_click", {
         method: "POST",
