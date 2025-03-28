@@ -72,6 +72,24 @@ function sendDataToBackend(animal) {
 
         document.getElementById("computer_choice_img").classList.add("flip");
 
+        //There's a little bug here where if player choses an animal and computer chooses human, it displays a different image than expected. But I feel this can be fixed by giving it the code it actually needs. 
+        if (data.player == "human") {
+            if (data.computer == "human") {
+                console.log("Wildcard vs wildcard. We will have a special outcome for this.")
+            }
+            else {
+                console.log("This is the player as a wildcard, versing any of the other animals. This will have a special outcome.")
+            }
+        }
+        else {
+            if (data.computer == "human") {
+                console.log("This is where the player chose another animal, and the computer is a wildcard. This will have a special outcome.")
+            }
+            else {
+                document.getElementById("winner_image").src = `/static/img/outcomes/${data.player}_vs_${data.computer}.png`;
+            }
+        };
+        
         sendRandomButtonToBackend();
     })
     .catch(error => console.error("Error:", error));
