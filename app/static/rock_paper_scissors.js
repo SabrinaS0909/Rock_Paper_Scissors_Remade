@@ -18,6 +18,8 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log("Rando Button Clicked");
             document.getElementById("animal_chosen").style.display = "none";
             outcome_window.style.display = "block";
+            
+            sendOutcomeToBackend();
         });
     });
 
@@ -104,6 +106,20 @@ function sendRandomButtonToBackend() {
     .then(data => {
         const message = data.random_button;
         document.getElementById("lets_go").textContent = message;
+        console.log(message);
+    })
+    .catch(error => console.error("Error:", error));
+}
+
+function sendOutcomeToBackend() {
+    fetch("/outcome", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" }
+    })
+    .then(response => response.json())
+    .then( data => {
+        const message = data.outcome;
+        document.getElementById("outcome_dialogue").textContent = message;
         console.log(message);
     })
     .catch(error => console.error("Error:", error));

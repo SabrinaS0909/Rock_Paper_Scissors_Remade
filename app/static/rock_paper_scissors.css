@@ -8,7 +8,8 @@ body{
 img{
     height: 15em;
     width: 15em;
-    margin: 1em; 
+    margin: 1em;
+    border-radius: 25px; 
  }
 
 h2 {
@@ -25,12 +26,14 @@ footer{
 button {
   background-color: rgb(141, 232, 255);
   border: 5px white solid;
+  border-radius: 25px;
   font-family: perpetua, Helvetica, serif;
   font-weight: bold;
 }
 button:hover {
   background-color: rgb(83, 154, 172);
   border: 4px rgb(146, 146, 146) solid;
+  border-radius: 25px;
 }
 
 .start {
@@ -68,11 +71,22 @@ button:hover {
 
 .a {
   border: 5px white solid;
+  border-radius: 25px;
   display: inline-block;
  }
 .b {
   border: 3px rgb(141, 232, 255) solid;
+  border-radius: 25px;
+  display: block;
+}
+.c {
+  border: 5px white solid;
+  border-radius: 25px;
   display: inline-block;
+}
+.d {
+  border: 3px rgb(141, 232, 255) solid;
+  border-radius: 25px;
   display: block;
 }
 .vs_animal {
@@ -90,10 +104,26 @@ button:hover {
 }
 
 .winner_image {
-  border: 2px solid white;
   width: 40em;
   height: 25em;
-  margin: 5em auto 1em auto;
+  margin: 0;
+  display: block;
+}
+
+.disclaimer {
+  font-size: 12px;
+  margin-top: 0;
+  margin-bottom: 5em;
+}
+
+.outcome_dialogue {
+  font-size: 15px;
+  font-weight: bold;
+  background-color: rgb(141, 232, 255);
+  border: 5px white solid;
+  border-radius: 25px;
+  display: inline;
+  padding: 10px;
 }
 
 .confirm_close {
@@ -108,12 +138,14 @@ button:hover {
   overflow: auto;
   background-color: rgba(0,0,0,0.4);
   border: 2px solid black;
+  border-radius: 25px;
 }
 .confirm_close_content {
   background-color: #fefefe;
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
+  border-radius: 25px;
   width: 25%;
 }
 .close {
@@ -129,4 +161,9 @@ button:hover {
 }
 .confirmation {
   border: 2px solid black;
+  border-radius: 25px;
+}
+
+.play_again {
+  margin-top: 5em;
 }
