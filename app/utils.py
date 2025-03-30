@@ -13,7 +13,9 @@ def random_button():
     button_dialogue = random.choice(possible_buttons)
     return button_dialogue
 
-
+def outcome():
+    outcome = "outcome"
+    return outcome
 
 """
 def outcome_possibilities(player_action, computer_action):

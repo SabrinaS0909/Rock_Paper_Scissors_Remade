@@ -1,6 +1,6 @@
 from app import app
 from flask import render_template, request, jsonify
-from app.utils import get_animal_choices, random_button
+from app.utils import get_animal_choices, random_button, outcome
 
 @app.route('/')
 def index():
@@ -19,4 +19,10 @@ def get_random_button():
     print(button_dialogue)
     return jsonify ({"random_button": button_dialogue})
 
-print("routes is working")
+@app.route('/outcome', methods = ['POST'])
+def get_outcome():
+    outcome_dialogue = outcome()
+    print(outcome_dialogue)
+    return jsonify ({"outcome": outcome_dialogue})
+
+print("routes is working") 
