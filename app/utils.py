@@ -14,7 +14,7 @@ def random_button():
     return button_dialogue
 
 def outcome():
-    outcome = "outcome"
+    outcome = "Outcome"
     return outcome
 
 """
