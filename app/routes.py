@@ -21,7 +21,11 @@ def get_random_button():
 
 @app.route('/outcome', methods = ['POST'])
 def get_outcome():
-    outcome_dialogue = outcome()
+    data = request.json
+    player_action = data.get("player_action")
+    computer_action = data.get("computer_action")
+    
+    outcome_dialogue = outcome(player_action, computer_action)
     print(outcome_dialogue)
     return jsonify ({"outcome": outcome_dialogue})
 
