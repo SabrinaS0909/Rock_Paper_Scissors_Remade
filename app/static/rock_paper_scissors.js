@@ -58,6 +58,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 //All functions that send data to the backend
+let player_action, computer_action
+
 function sendDataToBackend(animal) {
     fetch("/animal_click", {
         method: "POST",
@@ -66,17 +68,20 @@ function sendDataToBackend(animal) {
     })
     .then(response => response.json())
     .then(data => {
-        const message = `It's ${data.player} vs ${data.computer}!!`;
+        player_action = data.player;
+        computer_action = data.computer;
+
+        const message = `It's ${player_action} vs ${computer_action}!!`;
         document.getElementById("game_message").textContent = message;
-        document.getElementById("player_choice_img").src = `/static/img/${data.player} fighting.jpg`;
-        document.getElementById("computer_choice_img").src = `/static/img/${data.computer} fighting.jpg`;
+        document.getElementById("player_choice_img").src = `/static/img/${player_action} fighting.jpg`;
+        document.getElementById("computer_choice_img").src = `/static/img/${computer_action} fighting.jpg`;
         console.log(`It's ${data.player} vs ${data.computer}!!`)
 
         document.getElementById("computer_choice_img").classList.add("flip");
 
         //There's a little bug here where if player choses an animal and computer chooses human, it displays a different image than expected. But I feel this can be fixed by giving it the code it actually needs. 
-        if (data.player == "human") {
-            if (data.computer == "human") {
+        if (player_action == "human") {
+            if (computer_action == "human") {
                 console.log("Wildcard vs wildcard. We will have a special outcome for this.")
             }
             else {
@@ -84,14 +89,15 @@ function sendDataToBackend(animal) {
             }
         }
         else {
-            if (data.computer == "human") {
+            if (computer_action == "human") {
                 console.log("This is where the player chose another animal, and the computer is a wildcard. This will have a special outcome.")
             }
             else {
-                document.getElementById("winner_image").src = `/static/img/outcomes/${data.player}_vs_${data.computer}.png`;
+                document.getElementById("winner_image").src = `/static/img/outcomes/${player_action}_vs_${computer_action}.png`;
             }
         };
         
+        sendOutcomeToBackend();
         sendRandomButtonToBackend();
     })
     .catch(error => console.error("Error:", error));
@@ -114,7 +120,8 @@ function sendRandomButtonToBackend() {
 function sendOutcomeToBackend() {
     fetch("/outcome", {
         method: "POST",
-        headers: { "Content-Type": "application/json" }
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ player_action: player_action, computer_action: computer_action })
     })
     .then(response => response.json())
     .then( data => {

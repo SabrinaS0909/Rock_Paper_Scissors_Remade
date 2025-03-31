@@ -122,8 +122,10 @@ button:hover {
   background-color: rgb(141, 232, 255);
   border: 5px white solid;
   border-radius: 25px;
-  display: inline;
+  display: inline-flex;
   padding: 10px;
+  flex-direction: column;
+  align-items: center;
 }
 
 .confirm_close {
