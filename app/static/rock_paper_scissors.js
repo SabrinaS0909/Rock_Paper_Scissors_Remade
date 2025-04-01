@@ -131,3 +131,7 @@ function sendOutcomeToBackend() {
     })
     .catch(error => console.error("Error:", error));
 }
+
+function bark(bark) {
+    return bark
+}
