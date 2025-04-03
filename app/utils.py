@@ -148,6 +148,3 @@ def outcome(player_action, computer_action):
         raise ValueError(f"Unexpected input: player={player_action}, computer={computer_action}")
     
     return outcome
-
-def bark (bark):
-    return bark

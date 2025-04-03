@@ -30,6 +30,3 @@ def get_outcome():
     return jsonify ({"outcome": outcome_dialogue})
 
 print("routes is working") 
-
-def bark(bark):
-    return bark
