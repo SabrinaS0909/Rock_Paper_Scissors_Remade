@@ -36,11 +36,11 @@ def outcome(player_action, computer_action):
             outcome = computer_action_bee_vs_human
     elif player_action == "bun":
         if computer_action == "bee":
-            outcome = "In a battle for territory where the prize is land full of flowers which are great for hiding from predators, as wells as siphoning nectar, the bun calls in reinforcements and quickly there are too many to drive off with stings and pheramones. The buns claim the meadow of flowers. You lose!\n"
+            outcome = "Your ears flick as the sound of buzzing fills your canals. You're able to pinpoint just where it's coming from, and just where it's going. With one impressive hop, and a well timed kick with your large fluffy feet, you kick the bee out of the air and send it spiraling back from whence it came. You win!\n"
         elif computer_action == "bun":
             outcome = "Tie"
         elif computer_action == "corvid":
-            outcome = "Corvid eats the bee. You lose!\n"
+            outcome = "The corvid sees the bun outside of their den and alerts its presence to nearby wolves. The bun is hunted and both enjoy the meal. You lose!\n"
         elif computer_action == "cat":
             outcome = "Despite a well calculated swat, the bee outmanuervers the cat and manages to sting it right in the offending paw, sending the cat running. You win!\n"
         elif computer_action == "wolf":
