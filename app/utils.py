@@ -20,31 +20,31 @@ def outcome(player_action, computer_action):
         if computer_action == "bee":
             outcome = "Tie"
         elif computer_action == "bun":
-            outcome = "In a battle for territory where the prize is land full of flowers which are great for hiding from predators, as wells as siphoning nectar, the bun calls in reinforcements and quickly there are too many to drive off with stings and pheramones. The buns claim the meadow of flowers. You lose!\n"
+            outcome = "In a battle for territory, where the prize is a meadow full of flowers that are both great for buns to hide from predators and for bees to siphon nectar, the bun calls in reinforcements. Soon, there are too many to drive off with stings and pheramones. The buns claim the meadow of flowers. You lose!\n"
         elif computer_action == "corvid":
-            outcome = "Corvid eats the bee. You lose!\n"
+            outcome = "The corvid eats you. You lose!\n"
         elif computer_action == "cat":
-            outcome = "Despite a well calculated swat, the bee outmanuervers the cat and manages to sting it right in the offending paw, sending the cat running. You win!\n"
+            outcome = "Despite a well calculated swat, you outmanuerver the cat and manage to sting it right in the offending paw, sending the cat running. You win!\n"
         elif computer_action == "wolf":
             outcome = "The wolf gets stung in the muzz and looks silly the rest of the day. You win!\n"
         else:
             humanandbee_win_or_lose_actions = [
-                ("Human is allergic to the bee and is hospitalized. You win!\n", "win")
-                ("Human smacks the bee with a newspaper, crushing it immediately. You lose!\n", "lose")
+                ("The human is allergic to your sting and is hospitalized. You win!\n", "win")
+                ("The human smacks you with a newspaper, crushing you immediately. You lose!\n", "lose")
             ]
             computer_action_bee_vs_human = random.choice(humanandbee_win_or_lose_actions)
             outcome = computer_action_bee_vs_human
     elif player_action == "bun":
         if computer_action == "bee":
-            outcome = "Your ears flick as the sound of buzzing fills your canals. You're able to pinpoint just where it's coming from, and just where it's going. With one impressive hop, and a well timed kick with your large fluffy feet, you kick the bee out of the air and send it spiraling back from whence it came. You win!\n"
+            outcome = "Your ears flick as the sound of buzzing fills their tunneling canals. You're able to pinpoint just where it's coming from, and just where it's going. With one impressive hop, and a well timed kick with your large fluffy feet, you kick the bee out of the air and send it spiraling back from whence it came. You win!\n"
         elif computer_action == "bun":
             outcome = "Tie"
         elif computer_action == "corvid":
             outcome = "The corvid sees the bun outside of their den and alerts its presence to nearby wolves. The bun is hunted and both enjoy the meal. You lose!\n"
         elif computer_action == "cat":
-            outcome = "Despite a well calculated swat, the bee outmanuervers the cat and manages to sting it right in the offending paw, sending the cat running. You win!\n"
+            outcome = "The cat, brought in as pest control, drives you and your family from the garden you've lived in from birth. You lose!\n"
         elif computer_action == "wolf":
-            outcome = "The wolf gets stung in the muzz and looks silly the rest of the day. You win!\n"
+            outcome = "The wolf takes chase after you, but you're too fast and you make it back to the den before you can be claimed as dinner. The wolf must go hungry this time. You win!\n"
         else:
             humanandbun_win_or_lose_actions = [
                 ("The human unknowingly plants a garden of lettuce and tomatoes ontop of an underground bunny tunnel system, allowing them easy access to the human's produce within months while being difficult to find and exterminate. You win!\n", "win")
