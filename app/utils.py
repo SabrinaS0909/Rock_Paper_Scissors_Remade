@@ -20,7 +20,7 @@ def outcome(player_action, computer_action):
         if computer_action == "bee":
             outcome = "Tie"
         elif computer_action == "bun":
-            outcome = "In a battle for territory, where the prize is a meadow full of flowers that are both great for buns to hide from predators and for bees to siphon nectar, the bun calls in reinforcements. Soon, there are too many to drive off with stings and pheramones. The buns claim the meadow of flowers. You lose!\n"
+            outcome = "In a battle for territory, where the prize is a meadow full of flowers that are both great for buns to eat and hide from predators and for bees to siphon nectar, the bun calls in reinforcements. Soon, there are too many to drive off with stings and pheramones. The buns claim the meadow of flowers, eating too many for your colony to sustain. You lose!\n"
         elif computer_action == "corvid":
             outcome = "The corvid eats you. You lose!\n"
         elif computer_action == "cat":
@@ -40,21 +40,21 @@ def outcome(player_action, computer_action):
         elif computer_action == "bun":
             outcome = "Tie"
         elif computer_action == "corvid":
-            outcome = "The corvid sees the bun outside of their den and alerts its presence to nearby wolves. The bun is hunted and both enjoy the meal. You lose!\n"
+            outcome = "The corvid sees you outside of your den and alerts your presence to nearby wolves. You are hunted, and both wolf and corvid enjoy the meal. You lose!\n"
         elif computer_action == "cat":
             outcome = "The cat, brought in as pest control, drives you and your family from the garden you've lived in from birth. You lose!\n"
         elif computer_action == "wolf":
             outcome = "The wolf takes chase after you, but you're too fast and you make it back to the den before you can be claimed as dinner. The wolf must go hungry this time. You win!\n"
         else:
             humanandbun_win_or_lose_actions = [
-                ("The human unknowingly plants a garden of lettuce and tomatoes ontop of an underground bunny tunnel system, allowing them easy access to the human's produce within months while being difficult to find and exterminate. You win!\n", "win")
-                ("The human lays traps that ensnare the bun and its kin. You lose!\n", "lose")
+                ("The human unknowingly plants a garden of lettuce and tomatoes ontop of an underground bunny tunnel system, allowing you and your family easy access to the human's produce while being difficult to find and exterminate. You win!\n", "win")
+                ("The human lays traps that ensnare you and your kin. You lose!\n", "lose")
             ]
             computer_action_bun_vs_human = random.choice(humanandbun_win_or_lose_actions)
             outcome = computer_action_bun_vs_human
     elif player_action == "corvid":
         if computer_action == "bee":
-            outcome = "In a battle for territory where the prize is land full of flowers which are great for hiding from predators, as wells as siphoning nectar, the bun calls in reinforcements and quickly there are too many to drive off with stings and pheramones. The buns claim the meadow of flowers. You lose!\n"
+            outcome = "With your vast intelligence and tool-making abilities, you use a stick to pry bees and larvae from their hive for a quick snack while using your flight and agility to avoid their stings. You win!\n"
         elif computer_action == "bun":
             outcome = "Corvid eats the bee. You lose!\n"
         elif computer_action == "corvid":
