@@ -56,11 +56,11 @@ def outcome(player_action, computer_action):
         if computer_action == "bee":
             outcome = "With your vast intelligence and tool-making abilities, you use a stick to pry bees and larvae from their hive for a quick snack while using your flight and agility to avoid their stings. You win!\n"
         elif computer_action == "bun":
-            outcome = "Corvid eats the bee. You lose!\n"
+            outcome = "The bun, while trying to cross the street, is spooked when you swoop down at it, causing it to backtrack and get hit by a car. You can now feed on the roadkill. You win!\n"
         elif computer_action == "corvid":
             outcome = "Tie"
         elif computer_action == "cat":
-            outcome = "Despite a well calculated swat, the bee outmanuervers the cat and manages to sting it right in the offending paw, sending the cat running. You win!\n"
+            outcome = "Cat stalks and kills the corvid. You lose!\n"
         elif computer_action == "wolf":
             outcome = "The wolf gets stung in the muzz and looks silly the rest of the day. You win!\n"
         else:
