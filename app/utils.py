@@ -62,11 +62,11 @@ def outcome(player_action, computer_action):
         elif computer_action == "cat":
             outcome = "Cat stalks and kills the corvid. You lose!\n"
         elif computer_action == "wolf":
-            outcome = "The wolf gets stung in the muzz and looks silly the rest of the day. You win!\n"
+            outcome = "The wolf, after making a kill, reacts aggressively to you when you come down to try and scavange with the pack. You become an appetizer to the meal. You lose!\n"
         else:
             humanandcorvid_win_or_lose_actions = [
-                ("Human destroys the corvid's natural habitat and it's forced to live in the city. You lose!\n", "lose") 
-                ("Human enters the world of Alfred Hitchcock's *The Birds* and has their eyes pecked out by a crazed corvid. You win!\n", "win")
+                ("The human destroys your natural habitat and you're forced to live in the city. You lose!\n", "lose") 
+                ("The human enters the world of Alfred Hitchcock's *The Birds* and has their eyes pecked out by you, a crazed corvid. You win!\n", "win")
             ]
             computer_action_corvid_vs_human = random.choice(humanandcorvid_win_or_lose_actions)
             outcome = computer_action_corvid_vs_human
