@@ -80,7 +80,7 @@ def outcome(player_action, computer_action):
         elif computer_action == "cat":
             outcome = "Tie"
         elif computer_action == "wolf":
-            outcome = "The wolf gets stung in the muzz and looks silly the rest of the day. You win!\n"
+            outcome = "While overconfidently wandering the woods near you, a forest known for wolf activity, you're stolen away for dinner. You lose!\n"
         else:
             humanandcat_win_or_lose_actions = [
                 ("Human domesticates the cat and makes it wear silly hats and posts pictures of the embarassing situation all over the internet. You lose!\n", "lose") 
