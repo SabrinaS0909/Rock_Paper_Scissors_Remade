@@ -80,7 +80,7 @@ def outcome(player_action, computer_action):
         elif computer_action == "cat":
             outcome = "Tie"
         elif computer_action == "wolf":
-            outcome = "While overconfidently wandering the woods near you, a forest known for wolf activity, you're stolen away for dinner. You lose!\n"
+            outcome = "While overconfidently wandering the woods near you, woodlands that are known for wolf activity, you're stolen away for dinner. You lose!\n"
         else:
             humanandcat_win_or_lose_actions = [
                 ("Human domesticates the cat and makes it wear silly hats and posts pictures of the embarassing situation all over the internet. You lose!\n", "lose") 
@@ -90,18 +90,18 @@ def outcome(player_action, computer_action):
             outcome = computer_action_cat_vs_human
     elif player_action == "wolf":
         if computer_action == "bee":
-            outcome = "In a battle for territory where the prize is land full of flowers which are great for hiding from predators, as wells as siphoning nectar, the bun calls in reinforcements and quickly there are too many to drive off with stings and pheramones. The buns claim the meadow of flowers. You lose!\n"
+            outcome = "You lose!\n"
         elif computer_action == "bun":
-            outcome = "Corvid eats the bee. You lose!\n"
+            outcome = "The bun, while being chased by you, leads you directly into the pathway of hunters before disappearing beneath the ground. Now you have to outrun gunfire, as you are no longer protected by a status of being endangered. Thanks, gov'ment! You lose!\n"
         elif computer_action == "corvid":
-            outcome = "The wolf gets stung in the muzz and looks silly the rest of the day. You win!\n"
+            outcome = "Corvid befriends the wolf and alerts it to prey for both to enjoy. You win!\n"
         elif computer_action == "cat":
-            outcome = "Despite a well calculated swat, the bee outmanuervers the cat and manages to sting it right in the offending paw, sending the cat running. You win!\n"
+            outcome = "You win!\n"
         elif computer_action == "wolf":
             outcome = "Tie"
         else:
             humanandwolf_win_or_lose_actions = [
-                ("Human tests the wolf's boundaries with a meat-suit and gets mauled. You win!\n", "win")
+                ("Human tests the wolf's boundaries with a Jackass™-style meat-suit and gets mauled. You win!\n", "win")
                 ("Human confuses coyotes killing their livestock for wolves and goes on a mass hunting spree. You lose!\n", "lose")
             ]
             computer_action_wolf_vs_human = random.choice(humanandwolf_win_or_lose_actions)
