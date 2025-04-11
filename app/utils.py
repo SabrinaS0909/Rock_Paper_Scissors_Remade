@@ -90,19 +90,19 @@ def outcome(player_action, computer_action):
             outcome = computer_action_cat_vs_human
     elif player_action == "wolf":
         if computer_action == "bee":
-            outcome = "You lose!\n"
+            outcome = "The bee flies into your ear and buzzes right against your eardrum. The sound is intensely loud due to your sensitive hearing and it sends you into a desperate frenzy of scratching to get it out. You lose!\n"
         elif computer_action == "bun":
             outcome = "The bun, while being chased by you, leads you directly into the pathway of hunters before disappearing beneath the ground. Now you have to outrun gunfire, as you are no longer protected by a status of being endangered. Thanks, gov'ment! You lose!\n"
         elif computer_action == "corvid":
-            outcome = "Corvid befriends the wolf and alerts it to prey for both to enjoy. You win!\n"
+            outcome = "You befriend the corvid and benefit from an additional aerial view when searching for food. You get many more meals than you would have otherwise due to it. You win!\n"
         elif computer_action == "cat":
-            outcome = "You win!\n"
+            outcome = "The cat, who has lived its entire life with nothing larger than a Chihuaha, is intimidated by your sheer size and immediately runs home. You win!\n"
         elif computer_action == "wolf":
             outcome = "Tie"
         else:
             humanandwolf_win_or_lose_actions = [
-                ("Human tests the wolf's boundaries with a Jackass™-style meat-suit and gets mauled. You win!\n", "win")
-                ("Human confuses coyotes killing their livestock for wolves and goes on a mass hunting spree. You lose!\n", "lose")
+                ("The human tests the your, and a couple other wolves', boundaries with a Jackass™-style meat-suit and gets mauled. You win!\n", "win")
+                ("The human confuses coyotes killing their livestock for you and your pack, and goes on a mass hunting spree. You lose!\n", "lose")
             ]
             computer_action_wolf_vs_human = random.choice(humanandwolf_win_or_lose_actions)
             outcome = computer_action_wolf_vs_human
