@@ -123,14 +123,14 @@ def outcome(player_action, computer_action):
             outcome = computer_action_human_vs_bun
         elif computer_action == "corvid":
             corvid_win_or_lose_actions = [
-                ("Corvid drops from the sky due to human neonicotinoids. Well, at least the bugs are gone from the apples. You win!\n", "win")
-                ("Corvid waits for human to turn its head then attacks while its not looking, you lose!\n", "lose")
+                ("The corvid drops from the sky with it's buddies due to some human neonicotinoids you had been spraying. Well, at least the bugs are gone from the apples. You win!\n", "win")
+                ("The corvid waits for you to turn your head then attacks while you're not looking. You lose!\n", "lose")
             ]
             computer_action_human_vs_corvid = random.choice(corvid_win_or_lose_actions)
             outcome = computer_action_human_vs_corvid
         elif computer_action == "cat":
             cat_win_or_lose_actions = [
-                ("Human adopts the cat and realizes putting forth effort for another individual is too much. The cat is dumped in the street. You win!\n", "win")
+                ("You adopt the cat and realize that putting forth effort for another individual is too much. The cat is dumped in the street. You win!\n", "win")
                 ("Cat, while being driven out of its home by someone who can no longer provide for it, turns and mauls the human with claws of fury before finding a better home elsewhere. You lose!\n", "lose")
             ]
             computer_action_human_vs_cat = random.choice(cat_win_or_lose_actions)
