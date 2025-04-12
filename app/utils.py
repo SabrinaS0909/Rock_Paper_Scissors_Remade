@@ -109,14 +109,14 @@ def outcome(player_action, computer_action):
     elif player_action == "human":
         if computer_action == "bee":
             bee_win_or_lose_actions = [
-                ("Bee does a little dance that rallies the masses to attack the human. You lose!\n", "lose")
-                ("Human makes a movie about the bee that makes everyone assume it likes Jazz. It hears 'Ya like jazz?' for the remainder of its life. You win!\n", "win")
+                ("Bee does a little dance that rallies the masses to attack you. You lose!\n", "lose")
+                ("You make a movie about the bee that makes everyone assume it likes Jazz. It hears 'Ya like jazz?' for the remainder of its life. You win!\n", "win")
             ]
             computer_action_human_vs_bee = random.choice(bee_win_or_lose_actions)
             outcome = computer_action_human_vs_bee
         elif computer_action == "bun":
             bun_win_or_lose_actions = [
-                ("Bun, and its family, enjoys a very large meal which, to the human's dismay, turns out to be their crop yeild for the season. You lose!\n", "lose")
+                ("Bun, and its family, enjoys a very large meal which, to your dismay, turns out to be your crop yeild for the season. You lose!\n", "lose")
                 ("Bun foregoes it's usual choice of lettuce, and other mediocre looking vegetables, for some unusually juicy and delicious looking tomatoes. Turns out the reason they looked so good was because of DDT. The bun is poisoned and no longer bothers any of the crops. You win!\n", "win")
             ]
             computer_action_human_vs_bun = random.choice(bun_win_or_lose_actions)
