@@ -131,14 +131,14 @@ def outcome(player_action, computer_action):
         elif computer_action == "cat":
             cat_win_or_lose_actions = [
                 ("You adopt the cat and realize that putting forth effort for another individual is too much. The cat is dumped in the street. You win!\n", "win")
-                ("Cat, while being driven out of its home by someone who can no longer provide for it, turns and mauls the human with claws of fury before finding a better home elsewhere. You lose!\n", "lose")
+                ("The cat, while being driven out of your home with a broom, turns and mauls your face with claws of fury. You lose!\n", "lose")
             ]
             computer_action_human_vs_cat = random.choice(cat_win_or_lose_actions)
             outcome = computer_action_human_vs_cat
         elif computer_action == "wolf":
             wolf_win_or_lose_actions = [
-                ("Human retracts laws against indiscriminatory hunting of wolves. Wolves go extinct and species that require a keystone species destroy the ecosystem. You win!\n", "win")
-                ("Human attempts to hunt a wolf and instead meets the whole pack. The human is out of ammo. You lose!\n", "lose")
+                ("Your government retracts laws against indiscriminatory hunting of wolves. Wolves go extinct and species that require a keystone species destroy the ecosystem. You win!\n", "win")
+                ("You attempt to hunt a wolf and instead meet the whole pack. You're out of ammo. You lose!\n", "lose")
             ]
             computer_action_human_vs_wolf = random.choice(wolf_win_or_lose_actions)
             outcome = computer_action_human_vs_wolf
