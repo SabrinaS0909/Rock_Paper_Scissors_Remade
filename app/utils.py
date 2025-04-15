@@ -72,7 +72,7 @@ def outcome(player_action, computer_action):
             outcome = computer_action_corvid_vs_human
     elif player_action == "cat":
         if computer_action == "bee":
-            outcome = "The bee becomes aggitated when you decide to climb a tree that inhabits their home. When you step on the hive to aid your ascent, the bee sends out the pheramones necessary to protect the hive. You quickly flee. You lose!\n"
+            outcome = "Your nap is interrupted by the pesky buzzing of a bee. You don't remember that you're sleeping on the window sill of a seven story building until your leap towards the bee leaves you looking at the long drop below you. You land on your feet, but you're now a long ways from your home and the bee gets your napping spot. You lose!\n"
         elif computer_action == "bun":
             outcome = "The bun tests its luck and explores a yard that is highly protected by you. You make simple work of the curious bun. You win!\n"
         elif computer_action == "corvid":
@@ -116,7 +116,7 @@ def outcome(player_action, computer_action):
             outcome = computer_action_human_vs_bee
         elif computer_action == "bun":
             bun_win_or_lose_actions = [
-                ("Bun, and its family, enjoys a very large meal which, to your dismay, turns out to be your crop yeild for the season. You lose!\n", "lose")
+                ("Bun, and its family, enjoys a very large yard which, to your dismay, translates to thousands of burrows that destroy your grass and soil integrity. You lose!\n", "lose")
                 ("Bun foregoes it's usual choice of lettuce, and other mediocre looking vegetables, for some unusually juicy and delicious looking tomatoes. Turns out the reason they looked so good was because of DDT. The bun is poisoned and no longer bothers any of the crops. You win!\n", "win")
             ]
             computer_action_human_vs_bun = random.choice(bun_win_or_lose_actions)
