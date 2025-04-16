@@ -29,7 +29,7 @@ def outcome(player_action, computer_action):
             outcome = "The wolf gets stung in the muzz and looks silly the rest of the day. You win!\n"
         else:
             humanandbee_win_or_lose_actions = [
-                ("The human is allergic to your sting and is hospitalized. You win!\n", "win")
+                ("The human is allergic to your sting and is so terrified of being hospitalized that they cower in fear, showing you their bottle of Benedryl as if it were a cross and you were a demon. You win!\n", "win")
                 ("The human smacks you with a newspaper, crushing you immediately. You lose!\n", "lose")
             ]
             computer_action_bee_vs_human = random.choice(humanandbee_win_or_lose_actions)
