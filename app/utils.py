@@ -16,6 +16,10 @@ def random_button():
 def outcome(player_action, computer_action):
     print("outcome function is working")
 
+    #human outcomes
+
+    #other outcomes
+
     if player_action == "bee":
         if computer_action == "bee":
             outcome = "Tie"
