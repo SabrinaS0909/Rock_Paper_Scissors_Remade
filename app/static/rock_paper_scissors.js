@@ -128,10 +128,9 @@ function sendOutcomeToBackend() {
         const message = data.outcome;
         document.getElementById("outcome_dialogue").textContent = message;
         console.log(message);
+
+        //check if there's a win/lose result
+        
     })
     .catch(error => console.error("Error:", error));
-}
-
-function bark(bark) {
-    return bark
 }
