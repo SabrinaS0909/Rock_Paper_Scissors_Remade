@@ -21,11 +21,13 @@ def get_random_button():
 
 @app.route('/outcome', methods = ['POST'])
 def get_outcome():
-    data = request.json
+    data = request.get_json()
     player_action = data.get("player_action")
     computer_action = data.get("computer_action")
     
     outcome_dialogue = outcome(player_action, computer_action)
+    
+    #update the stuff below this to accept and process tuples
     print(outcome_dialogue)
     return jsonify ({"outcome": outcome_dialogue})
 
