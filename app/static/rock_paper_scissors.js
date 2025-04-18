@@ -80,22 +80,6 @@ function sendDataToBackend(animal) {
         document.getElementById("computer_choice_img").classList.add("flip");
 
         //There's a little bug here where if player choses an animal and computer chooses human, it displays a different image than expected. But I feel this can be fixed by giving it the code it actually needs. 
-        if (player_action == "human") {
-            if (computer_action == "human") {
-                console.log("Wildcard vs wildcard. We will have a special outcome for this.")
-            }
-            else {
-                console.log("This is the player as a wildcard, versing any of the other animals. This will have a special outcome.")
-            }
-        }
-        else {
-            if (computer_action == "human") {
-                console.log("This is where the player chose another animal, and the computer is a wildcard. This will have a special outcome.")
-            }
-            else {
-                document.getElementById("winner_image").src = `/static/img/outcomes/${player_action}_vs_${computer_action}.png`;
-            }
-        };
         
         sendOutcomeToBackend();
         sendRandomButtonToBackend();
@@ -125,12 +109,45 @@ function sendOutcomeToBackend() {
     })
     .then(response => response.json())
     .then( data => {
-        const message = data.outcome;
+        const message = data.description;
+        const result = data.result;
+
         document.getElementById("outcome_dialogue").textContent = message;
-        console.log(message);
+        console.log("Message:", message);
+        console.log("Result", result);
 
-        //check if there's a win/lose result 
-
+        if (player_action == "human") {
+            if (computer_action == "human") {
+                document.getElementById("winner_image").src = "/static/img/outcomes/human_vs_human.png";
+            }
+            else {
+                if (result == "win") {
+                    document.getElementById("winner_image").src = `/static/img/outcomes/${player_action}_vs_${computer_action}_win.png`;
+                }
+                else if (result == "lose") {
+                    document.getElementById("winner_image").src = `/static/img/outcomes/${player_action}_vs_${computer_action}_lose.png`;
+                }
+                else {
+                    console.log("Something isn't right.")
+                }
+            }
+        }
+        else {
+            if (computer_action == "human") {
+                if (result == "win") {
+                    document.getElementById("winner_image").src = `/static/img/outcomes/${player_action}_vs_${computer_action}_win.png`;
+                }
+                else if (result == "lose") {
+                    document.getElementById("winner_image").src = `/static/img/outcomes/${player_action}_vs_${computer_action}_lose.png`;
+                }
+                else {
+                    console.log("Something isn't right.")
+                }                
+            }
+            else {
+                document.getElementById("winner_image").src = `/static/img/outcomes/${player_action}_vs_${computer_action}.png`;
+            }
+        };
     })
     .catch(error => console.error("Error:", error));
 }
