@@ -25,10 +25,12 @@ def get_outcome():
     player_action = data.get("player_action")
     computer_action = data.get("computer_action")
     
-    outcome_dialogue = outcome(player_action, computer_action)
-    
-    #update the stuff below this to accept and process tuples 
-    print(outcome_dialogue)
-    return jsonify ({"outcome": outcome_dialogue})
+    description, result = outcome(player_action, computer_action)
+
+    print(description, result)
+    return jsonify ({
+        "description": description,
+        "result": result
+    })
 
 print("routes is working") 
