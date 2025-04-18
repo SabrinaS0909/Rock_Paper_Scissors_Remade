@@ -27,7 +27,7 @@ def get_outcome():
     
     outcome_dialogue = outcome(player_action, computer_action)
     
-    #update the stuff below this to accept and process tuples
+    #update the stuff below this to accept and process tuples 
     print(outcome_dialogue)
     return jsonify ({"outcome": outcome_dialogue})
 
