@@ -85,7 +85,7 @@ def outcome(player_action, computer_action):
         if computer_action == "bee":
             bee_win_or_lose_actions = [
                 ("Bee does a little dance that rallies the masses to attack you. You lose!\n", "lose"),
-                ("You make a movie about the bee that makes everyone assume it likes Jazz. It hears 'Ya like jazz?' for the remainder of its life. You win!\n", "win")
+                ("You make a movie about the bee that makes everyone assume it likes jazz. It hears 'Ya like jazz?' for the remainder of its life. You win!\n", "win")
             ]
             computer_action_human_vs_bee = random.choice(bee_win_or_lose_actions)
             outcome = computer_action_human_vs_bee
