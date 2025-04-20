@@ -33,4 +33,4 @@ def get_outcome():
         "result": result
     })
 
-print("routes is working") 
+print("routes is working")  
