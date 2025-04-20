@@ -99,7 +99,7 @@ function sendRandomButtonToBackend() {
         console.log(message);
     })
     .catch(error => console.error("Error:", error));
-}
+} 
 
 function sendOutcomeToBackend() {
     fetch("/outcome", {
