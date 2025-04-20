@@ -160,4 +160,4 @@ def outcome(player_action, computer_action):
     else:
         raise ValueError(f"Unexpected input: player={player_action}, computer={computer_action}")
     
-    return outcome
+    return outcome 
