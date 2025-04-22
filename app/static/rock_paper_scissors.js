@@ -77,9 +77,11 @@ function sendDataToBackend(animal) {
         document.getElementById("computer_choice_img").src = `/static/img/${computer_action} fighting.jpg`;
         console.log(`It's ${data.player} vs ${data.computer}!!`)
 
-        document.getElementById("computer_choice_img").classList.add("flip");
-
-        //There's a little bug here where if player choses an animal and computer chooses human, it displays a different image than expected. But I feel this can be fixed by giving it the code it actually needs. 
+        for (let img of document.querySelectorAll("img")) {
+            img.addEventListener("load", function(){
+                document.getElementById("computer_choice_img").classList.add("flip");
+            });
+        }  
         
         sendOutcomeToBackend();
         sendRandomButtonToBackend();
