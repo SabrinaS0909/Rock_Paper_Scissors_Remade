@@ -73,20 +73,20 @@ function sendDataToBackend(animal) {
 
         const message = `It's ${player_action} vs ${computer_action}!!`;
         document.getElementById("game_message").textContent = message;
-        document.getElementById("player_choice_img").src = `/static/img/${player_action} fighting.jpg`;
-        document.getElementById("computer_choice_img").src = `/static/img/${computer_action} fighting.jpg`;
-        console.log(`It's ${data.player} vs ${data.computer}!!`)
 
-        for (let img of document.querySelectorAll("img")) {
-            img.addEventListener("load", function(){
-                document.getElementById("computer_choice_img").classList.add("flip");
-            });
-        }  
+        document.getElementById("player_choice_img").src = `/static/img/${player_action} fighting.jpg`;
+        document.getElementById("player_choice_img").alt= `There should be an angry ${player_action} here.`;
+
+        document.getElementById("computer_choice_img").src = `/static/img/${computer_action} fighting.jpg`;
+        document.getElementById("computer_choice_img").alt= `There should be an angry ${computer_action} here.`;
+        console.log(`It's ${data.player} vs ${data.computer}!!`);
+
+        document.getElementById("computer_choice_img").classList.add("flip"); 
         
         sendOutcomeToBackend();
         sendRandomButtonToBackend();
     })
-    .catch(error => console.error("Error:", error));
+    .catch(error => console.error("Error:", error));  
 }
 
 function sendRandomButtonToBackend() {
