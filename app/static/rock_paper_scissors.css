@@ -101,7 +101,7 @@ button:hover {
 
 .flip {
   transform: scaleX(-1)
-}  
+}
 
 .winner_image {
   width: 40em;
