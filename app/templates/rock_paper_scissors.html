@@ -59,13 +59,13 @@
             <h1 id = "game_message"></h1>
             <div class = "a">
                 <div class = "b">
-                    <img id = "player_choice_img" class = "vs_animal"> <!--Important bug! The "{player_choice}" doesn't get replaced by the chosen creature!-->
+                    <img id = "player_choice_img" class = "vs_animal">
                 </div>
             </div>
             <img class = "vs" src="{{ url_for('static', filename='img/vs.png') }}" alt="vs">
             <div class = "a">
                 <div class = "b">
-                    <img id = "computer_choice_img" class = "vs_animal"> <!--Important bug! The "{computer_choice}" doesn't get replaced by the chosen creature, AND the words are flipped like the image!-->
+                    <img id = "computer_choice_img" class = "vs_animal"> <!--Important bug! The words are flipped like the image!-->
                 </div>
             </div>
             <br><button class = "lets_go" id = "lets_go"></button>
@@ -88,6 +88,9 @@
                     <button class = "confirmation">Yes</button>
                 </div>
             </div>
+        </div>
+        <div class = "tie" id = "tie">
+            <p>This is where we will go when a tie occurs.</p>
         </div>
         <footer>
             <a href="index.html">Go back to home page</a>
