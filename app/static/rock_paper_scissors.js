@@ -114,6 +114,13 @@ function sendOutcomeToBackend() {
         const message = data.description;
         const result = data.result;
 
+        if (result === "tie") {
+            document.getElementById("outcome").style.display = "none";
+            document.getElementById("animal_chosen").style.display = "none";
+            document.getElementById("tie").style.display = "block";
+            return;
+        }
+
         document.getElementById("outcome_dialogue").textContent = message;
         console.log("Message:", message);
         console.log("Result", result);
