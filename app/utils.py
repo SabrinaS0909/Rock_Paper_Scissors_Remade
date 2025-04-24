@@ -93,7 +93,7 @@ def outcome(player_action, computer_action):
     key = (player_action, computer_action)
 
     if key not in animal_outcomes_map:
-        raise ValueError(f"Unexpected input: player = {player_action}, computer = {computer_action}")
+       raise ValueError(f"Unexpected input: player = {player_action}, computer = {computer_action}")
     
     result = animal_outcomes_map[key]
        
