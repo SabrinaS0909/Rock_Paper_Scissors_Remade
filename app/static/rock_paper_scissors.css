@@ -170,3 +170,24 @@ button:hover {
 .play_again {
   margin-top: 3em;
 }
+
+.tie {
+  display: none;
+}
+
+.tie_announcement {
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.choose_element {
+  font-weight: bold;
+  font-size: 20px;
+  margin: 3em;
+}
+
+.element_buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
