@@ -74,11 +74,11 @@ function sendDataToBackend(animal) {
         const message = `It's ${player_action} vs ${computer_action}!!`;
         document.getElementById("game_message").textContent = message;
 
-        document.getElementById("player_choice_img").src = `/static/img/${player_action} fighting.jpg`;
-        document.getElementById("player_choice_img").alt= `There should be an angry ${player_action} here.`;
+        document.getElementById("player_choice_img").src = `/static/img/animals/${player_action} fighting.jpg`;
+        document.getElementById("player_choice_img").alt= `an angry ${player_action} that's ready to fight`;
 
-        document.getElementById("computer_choice_img").src = `/static/img/${computer_action} fighting.jpg`;
-        document.getElementById("computer_choice_img").alt= `There should be an angry ${computer_action} here.`;
+        document.getElementById("computer_choice_img").src = `/static/img/animals/${computer_action} fighting.jpg`;
+        document.getElementById("computer_choice_img").alt= `an angry ${computer_action} that's ready to fight`;
         console.log(`It's ${data.player} vs ${data.computer}!!`);
 
         document.getElementById("computer_choice_img").classList.add("flip"); 
