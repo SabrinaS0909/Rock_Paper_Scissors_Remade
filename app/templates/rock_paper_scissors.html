@@ -15,7 +15,7 @@
             </header>
             
             <h2>Please, choose an animal:</h2>
-            <div class = "animal_flexbox">
+            <div class = "flexbox">
                 <div class = "animal">
                     <button class = "animal_button" id = "bee_button" data-animal = "bee">
                         <img src="{{ url_for('static', filename='img/animals/bee.jpg') }}" alt="a bee">
@@ -71,8 +71,8 @@
             <br><button class = "lets_go" id = "lets_go"></button>
         </div>
         <div class = "outcome" id = "outcome">
-            <div class = "c">
-                <div class = "d">
+            <div class = "a">
+                <div class = "b">
                     <img class = "winner_image" id = "winner_image" alt = "a depiction of your chosen animal winning or losing here">
                 </div>
             </div>
@@ -93,21 +93,21 @@
             <p class = "tie_announcement">It's a tie!</p>
             <p>Looks like being basic animals isn't enough for you two. It's time to adopt a... 'special' quality to apply to your animal of choice.</p>
             <p class = "choose_element">Choose a basic element:</p>
-            <div class = "element_buttons">
-                <button>
-                    <img src="{{ url_for('static', filename='img/accessory_imgs/water_symbol.jpg') }}" alt="water symbol">
+            <div class = "element_buttons, flexbox">
+                <button class = "button_water">
+                    <img src="{{ url_for('static', filename='img/accessory_imgs/water_symbol.png') }}" alt="water symbol">
                 </button>
                 <p>water</p>
-                <button>
-                    <img src="{{ url_for('static', filename='img/accessory_imgs/fire_symbol.jpg') }}" alt="fire symbol">
+                <button class = "button_fire">
+                    <img src="{{ url_for('static', filename='img/accessory_imgs/fire_symbol.png') }}" alt="fire symbol">
                 </button>
                 <p>fire</p>
-                <button>
-                    <img src="{{ url_for('static', filename='img/accessory_imgs/earth_symbol.jpg') }}" alt="earth symbol">
+                <button class = "button_earth">
+                    <img src="{{ url_for('static', filename='img/accessory_imgs/earth_symbol.png') }}" alt="earth symbol">
                 </button>
                 <p>earth</p>
-                <button>
-                    <img src="{{ url_for('static', filename='img/accessory_imgs/air_symbol.jpg') }}" alt="air symbol">
+                <button class = "button_air">
+                    <img src="{{ url_for('static', filename='img/accessory_imgs/air_symbol.png') }}" alt="air symbol">
                 </button>
                 <p>air</p>
             </div>
