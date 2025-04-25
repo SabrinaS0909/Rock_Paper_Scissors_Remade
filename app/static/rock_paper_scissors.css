@@ -17,8 +17,7 @@ h2 {
  }
    
 footer{
-   margin: 1em;
-   bottom: 0px;
+   margin: 10em 1em 1em 1em;
    position: static;
    float: right;
  }
@@ -35,6 +34,30 @@ button:hover {
   border: 4px rgb(146, 146, 146) solid;
   border-radius: 25px;
 }
+.button_water {
+  background-color: rgb(112, 87, 255);
+}
+.button_water:hover {
+  background-color: rgb(79, 67, 146);
+}
+.button_fire {
+  background-color: rgb(255, 149, 29);
+}
+.button_fire:hover {
+  background-color: rgb(139, 99, 52);
+}
+.button_earth {
+  background-color: rgb(106, 255, 100);
+}
+.button_earth:hover {
+  background-color: rgb(77, 141, 75);
+}
+.button_air {
+  background-color: rgb(203, 253, 255);
+}
+.button_air:hover {
+  background-color: rgb(135, 159, 160);
+}
 
 .start {
   display: block;
@@ -49,7 +72,7 @@ button:hover {
   display: none;
 }
 
-.animal_flexbox {
+.flexbox {
    display: flex;
    justify-content: center;
    flex-wrap: wrap;
@@ -79,16 +102,7 @@ button:hover {
   border-radius: 25px;
   display: block;
 }
-.c {
-  border: 5px white solid;
-  border-radius: 25px;
-  display: inline-block;
-}
-.d {
-  border: 3px rgb(141, 232, 255) solid;
-  border-radius: 25px;
-  display: block;
-}
+
 .vs_animal {
   margin: 0em;
   display: block;
