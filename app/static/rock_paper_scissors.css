@@ -204,4 +204,5 @@ button:hover {
 .element_buttons {
   display: flex;
   justify-content: space-evenly;
+  margin: 1em;
 }
