@@ -95,30 +95,33 @@
             <p class = "choose_element">Choose a basic element:</p>
             <div class = "element_buttons">
                 <div>
-                    <button class = "button_water">
+                    <button class = "button_water, element_button">
                         <img src="{{ url_for('static', filename='img/accessory_imgs/water_symbol.png') }}" alt="water symbol">
                     </button>  
                     <p>water</p>  
                 </div>
                 <div>
-                    <button class = "button_fire">
+                    <button class = "button_fire, element_button">
                         <img src="{{ url_for('static', filename='img/accessory_imgs/fire_symbol.png') }}" alt="fire symbol">
                     </button>
                     <p>fire</p>    
                 </div>
                 <div>
-                    <button class = "button_earth">
+                    <button class = "button_earth, element_button">
                         <img src="{{ url_for('static', filename='img/accessory_imgs/earth_symbol.png') }}" alt="earth symbol">
                     </button>
                     <p>earth</p>    
                 </div>
                 <div>
-                    <button class = "button_air">
+                    <button class = "button_air, element_button">
                         <img src="{{ url_for('static', filename='img/accessory_imgs/air_symbol.png') }}" alt="air symbol">
                     </button>
                     <p>air</p>    
                 </div>
             </div>
+        </div>
+        <div class = "element_animal" id = "element_animal">
+            <p>Element Animal!</p>
         </div>
         <footer>
             <a href="index.html">Go back to home page</a>
