@@ -30,8 +30,32 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("tie").style.display = "none";
             document.getElementById("element_animal").style.display = "block";
             document.getElementById("element_animal_one").style.display = "block";
-        })
-    })
+        });
+    });
+    document.querySelectorAll(".continue_one").forEach(button => {
+        button.addEventListener("click", function () {
+            document.getElementById("element_animal_one").style.display = "none";
+            document.getElementById("element_animal_two").style.display = "block";
+        });
+    });
+    document.querySelectorAll(".continue_two").forEach(button => {
+        button.addEventListener("click", function () {
+            document.getElementById("element_animal_two").style.display = "none";
+            document.getElementById("element_animal_three").style.display = "block";
+        });
+    });
+    document.querySelectorAll(".continue_three").forEach(button => {
+        button.addEventListener("click", function () {
+            document.getElementById("element_animal_three").style.display = "none";
+            document.getElementById("element_animal_four").style.display = "block";
+        });
+    });
+    document.querySelectorAll(".continue_four").forEach(button => {
+        button.addEventListener("click", function () {
+            document.getElementById("element_animal_four").style.display = "none";
+            document.getElementById("element_animal_five").style.display = "block";
+        });
+    });
 
     document.querySelectorAll(".close_game").forEach(button => {
         button.addEventListener("click", function () {
