@@ -76,9 +76,41 @@ animal_outcomes_map = {
     ("human", "human"): ("Tie", "tie"),
 }
 
+element_animals_map = {
+    ("bee", "water"): ("a Baltic isopod"),
+    ("bee", "fire"): ("a wasp"),
+    ("bee", "earth"): ("a scorpion"),
+    ("bee", "air"): ("a bumble bee"),
+
+    ("bun", "water"): ("a sea bunny"),
+    ("bun", "fire"): ("a desert jackrabbit"),
+    ("bun", "earth"): ("a Flemish giant rabbit"),
+    ("bun", "air"): ("a Netherland Dwarf rabbit"),
+
+    ("corvid", "water"): ("a crow"),
+    ("corvid", "fire"): ("a jay"),
+    ("corvid", "earth"): ("a raven"),
+    ("corvid", "air"): ("a magpie"),
+
+    ("cat", "water"): ("a jaguar"),
+    ("cat", "fire"): ("a tiger"),
+    ("cat", "earth"): ("a lion"),
+    ("cat", "air"): ("a snow leopard"),
+
+    ("wolf", "water"): ("a coastal wolf"),
+    ("wolf", "fire"): ("a Maine wolf"),
+    ("wolf", "earth"): ("a grey wolf"),
+    ("wolf", "air"): ("an arctic wolf"),
+
+    ("human", "water"): ("a marine biologist"),
+    ("human", "fire"): ("a firefighter"),
+    ("human", "earth"): ("a geologist"),
+    ("human", "air"): ("an aircraft pilot"),
+}
+
 def get_animal_choices(data):
     player_action = data["animal"]
-    possible_actions = ["bee", "bun", "corvid", "cat", "wolf", "human"]
+    possible_actions = ["bee"] #, "bun", "corvid", "cat", "wolf", "human"
     computer_action = random.choice(possible_actions)
     return player_action, computer_action
 
@@ -98,3 +130,8 @@ def outcome(player_action, computer_action):
     result = animal_outcomes_map[key]
        
     return random.choice(result) if isinstance(result, list) else result 
+
+#I want to log what outcomes a player has already experienced, and prevent them from happening again until at least 3-5 turns later.
+
+def element_animals(player_action, player_element, computer_action, computer_element):
+    print("element_animal function is working")
