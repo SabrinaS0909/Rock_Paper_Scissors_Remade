@@ -16,6 +16,11 @@ p {
   font-size: 16px;
 }
 
+h1 {
+  text-shadow: 1px 1px 0 rgb(223, 227, 229), 4px 4px 0 rgba(0, 0, 0, 0.25);
+  color: #000000;
+}
+
 h2 {
    margin: 3em;
  }
@@ -32,6 +37,7 @@ button {
   border-radius: 25px;
   font-family: perpetua, Helvetica, serif;
   font-weight: bold;
+  padding: 6px;
 }
 button:hover {
   background-color: rgb(83, 154, 172);
