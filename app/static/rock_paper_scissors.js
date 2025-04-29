@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             document.getElementById("tie").style.display = "none";
             document.getElementById("element_animal").style.display = "block";
+            document.getElementById("element_animal_one").style.display = "block";
         })
     })
 
