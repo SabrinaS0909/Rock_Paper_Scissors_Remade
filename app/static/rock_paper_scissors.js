@@ -25,11 +25,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.querySelectorAll(".element_button").forEach(button => {
         button.addEventListener("click", function () {
-            console.log("Element Button Clicked: " + this.dataset.element)
+            const player_element = this.dataset.element;
+            console.log("Element Button Clicked: " + player_element);
 
             document.getElementById("tie").style.display = "none";
             document.getElementById("element_animal").style.display = "block";
             document.getElementById("element_animal_one").style.display = "block";
+
+            getPlayerCombo(player_action, player_element);
         });
     });
     document.querySelectorAll(".continue_one").forEach(button => {
@@ -193,4 +196,20 @@ function sendOutcomeToBackend() {
         };
     })
     .catch(error => console.error("Error:", error));
+}
+
+function getPlayerCombo(animal, element) {
+    fetch("/get_player_combo", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ animal: animal, element: element })
+    })
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById("player_combo_test").textContent = data.combo_name;
+        document.getElementById("player_combo_img").src = data.combo_image;
+        document.getElementById("player_combo_img").alt = `your ${data.combo_name}`;
+        console.log("Player combo animal loaded:", data.combo_name);
+    })
+    .catch(error => console.error("Error getting player combo:", error));
 }
