@@ -213,7 +213,11 @@ button:hover {
 
 .element_buttons {
   display: flex;
-  justify-content: space-evenly;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.element_button {
+  margin: 1em;
 }
 
 .element_explanation {
@@ -222,6 +226,7 @@ button:hover {
 
 .element_animal {
   display: none;
+  margin-top: 6em;
 }
 .element_animal_text {
   font-size: 50px;
