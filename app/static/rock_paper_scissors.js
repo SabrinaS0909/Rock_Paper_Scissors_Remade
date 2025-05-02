@@ -206,7 +206,7 @@ function getPlayerCombo(animal, element) {
     })
     .then(response => response.json())
     .then(data => {
-        document.getElementById("player_combo_test").textContent = data.combo_name;
+        document.getElementById("player_combo_text").textContent = data.combo_name;
         document.getElementById("player_combo_img").src = data.combo_image;
         document.getElementById("player_combo_img").alt = `your ${data.combo_name}`;
         console.log("Player combo animal loaded:", data.combo_name);
