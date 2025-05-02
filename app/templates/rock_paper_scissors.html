@@ -95,25 +95,25 @@
             <p class = "choose_element">Choose a basic element:</p>
             <div class = "element_buttons">
                 <div>
-                    <button class = "button_water, element_button">
+                    <button class = "button_water, element_button" data-element = "water">
                         <img src="{{ url_for('static', filename='img/accessory_imgs/water_symbol.png') }}" alt="water symbol">
                     </button>  
                     <p>water</p>  
                 </div>
                 <div>
-                    <button class = "button_fire, element_button">
+                    <button class = "button_fire, element_button" data-element = "fire">
                         <img src="{{ url_for('static', filename='img/accessory_imgs/fire_symbol.png') }}" alt="fire symbol">
                     </button>
                     <p>fire</p>    
                 </div>
                 <div>
-                    <button class = "button_earth, element_button">
+                    <button class = "button_earth, element_button" data-element = "earth">
                         <img src="{{ url_for('static', filename='img/accessory_imgs/earth_symbol.png') }}" alt="earth symbol">
                     </button>
                     <p>earth</p>    
                 </div>
                 <div>
-                    <button class = "button_air, element_button">
+                    <button class = "button_air, element_button" data-element = "air">
                         <img src="{{ url_for('static', filename='img/accessory_imgs/air_symbol.png') }}" alt="air symbol">
                     </button>
                     <p>air</p>    
@@ -126,7 +126,7 @@
                 <button class = "continue_one">Tell me, tell me, tell me!</button>
             </div>
             <div class = "element_animal_two" id = "element_animal_two">
-                <img id = "player_combo_img" src = "" alt = ""> <!--player combo animal image-->
+                <img id = "player_combo_img"> <!--player combo animal image-->
                 <p class = "element_animal_text" id = "player_combo_text">{player_combo_animal}</p>
                 <button class = "continue_two">Sweet!</button>
             </div>
