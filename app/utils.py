@@ -133,5 +133,5 @@ def outcome(player_action, computer_action):
 
 #I want to log what outcomes a player has already experienced, and prevent them from happening again until at least 3-5 turns later.
 
-def element_animals(player_action, player_element, computer_action, computer_element):
-    print("element_animal function is working")
+def get_random_element():
+    return random.choice(["water", "fire", "earth", "air"])
