@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("element_animal").style.display = "block";
             document.getElementById("element_animal_one").style.display = "block";
 
-            getPlayerCombo(player_action, player_element);
+            getComboAnimal(player_action, player_element, "player");
         });
     });
     document.querySelectorAll(".continue_one").forEach(button => {
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("element_animal_two").style.display = "none";
             document.getElementById("element_animal_three").style.display = "block";
 
-            getComputerCombo(computer_action);
+            getComboAnimal(computer_action, null, "computer");
         });
     });
     document.querySelectorAll(".continue_three").forEach(button => {
@@ -200,34 +200,25 @@ function sendOutcomeToBackend() {
     .catch(error => console.error("Error:", error));
 }
 
-function getPlayerCombo(animal, element) {
-    fetch("/get_player_combo", {
+function getComboAnimal(animal, element = null, owner) {
+    fetch("/get_combo", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ animal: animal, element: element })
     })
     .then(response => response.json())
     .then(data => {
-        document.querySelectorAll("element_animal_text").textContent = data.combo_name;
-        document.querySelectorAll("player_combo_img").src = data.combo_image;
-        document.querySelectorAll("player_combo_img").alt = `your ${data.combo_name}`;
-        console.log("Player combo animal loaded:", data.combo_name);
-    })
-    .catch(error => console.error("Error getting player combo:", error));
-}
+        const comboTextClass = owner === "player" ? ".player_combo_text" : ".computer_combo_text";
+        const comboImgClass = owner === "player" ? ".player_combo_img" : ".computer_combo_img";
 
-function getComputerCombo(animal) {
-    fetch("/get_computer_combo", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ animal: animal })
+        document.querySelectorAll(comboTextClass).forEach(el => {
+            el.textContent = data.combo_name;
+        });
+
+        document.querySelectorAll(comboImgClass).forEach(el => {
+            el.src = data.combo_image;
+            el.alt = `${owner === "player" ? "your" : "a"} ${data.combo_name}`;
+        });
     })
-    .then(response => response.json())
-    .then(data => {
-        document.querySelectorAll("computer_combo_text").textContent = data.combo_name;
-        document.querySelectorAll("computer_combo_img").src = data.combo_image;
-        document.querySelectorAll("computer_combo_img").alt = `a ${data.combo_name}`;
-        console.log("Computer combo animal loaded:", data.combo_name);
-    })
-    .catch(error => console.error("Error getting computer combo:", error));
+    .catch(error => console.error(`Error getting ${owner} combo:`, error));
 }
