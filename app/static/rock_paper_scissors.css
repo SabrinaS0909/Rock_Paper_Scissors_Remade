@@ -228,7 +228,7 @@ button:hover {
   display: none;
   margin-top: 6em;
 }
-.element_animal_text {
+.player_combo_text {
   font-size: 50px;
   font-weight: bold;
   text-shadow: 1px 1px 0 rgb(223, 227, 229), 4px 4px 0 rgba(0, 0, 0, 0.25);
