@@ -135,3 +135,8 @@ def outcome(player_action, computer_action):
 
 def get_random_element():
     return random.choice(["water", "fire", "earth", "air"])
+
+def get_combo_animal(animal, element):
+    combo_name = element_animals_map.get((animal, element), "an unknown creature")
+    combo_image = f"/static/img/element_combos/{animal}_{element}.png"
+    return combo_name, combo_image
