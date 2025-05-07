@@ -1,6 +1,6 @@
 from app import app
 from flask import render_template, request, jsonify
-from app.utils import get_animal_choices, random_button, outcome, element_animals_map, get_random_element
+from app.utils import get_animal_choices, random_button, outcome, element_animals_map, get_random_element, get_combo_animal
 
 @app.route('/')
 def index():
@@ -33,33 +33,24 @@ def get_outcome():
         "result": result
     })
 
-@app.route("/get_player_combo", methods = ["POST"])
-def get_player_combo():
+@app.route("/get_combo", methods = ["POST"])
+def get_combo():
     data = request.get_json()
     animal = data.get("animal")
     element = data.get("element")
+    
+    if element is None:
+        element = get_random_element()
 
-    combo_name = element_animals_map.get((animal, element), "an unknown creature")
-    combo_image = f"/static/img/element_combos/{animal}_{element}.png"
 
-    return jsonify({
-        "combo_name": combo_name,
-        "combo_image": combo_image
-    })
 
-@app.route("/get_computer_combo", methods = ["POST"])
-def get_computer_combo():
-    data = request.get_json()
-    animal = data.get("animal")
-    element = get_random_element()
-
-    combo_name = element_animals_map.get((animal, element), "an unknown creature")
-    combo_image = f"/static/img/element_combos/{animal}_{element}.png"
-
+    combo_name, combo_image = get_combo_animal(animal, element)
+    
     return jsonify({
         "combo_name": combo_name,
         "combo_image": combo_image,
         "element": element
     })
+
 
 print("routes is working")  
