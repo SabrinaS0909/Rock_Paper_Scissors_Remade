@@ -208,17 +208,21 @@ function getComboAnimal(animal, element = null, owner) {
     })
     .then(response => response.json())
     .then(data => {
-        const comboTextClass = owner === "player" ? ".player_combo_text" : ".computer_combo_text";
-        const comboImgClass = owner === "player" ? ".player_combo_img" : ".computer_combo_img";
+        player_combo = data.combo_name;
+        computer_combo = data.combo_name;
 
-        document.querySelectorAll(comboTextClass).forEach(el => {
-            el.textContent = data.combo_name;
-        });
+        const message = `It's ${player_combo} vs ${computer_combo}!!`;
+        document.getElementById("combo_message").textContent = message;
 
-        document.querySelectorAll(comboImgClass).forEach(el => {
-            el.src = data.combo_image;
-            el.alt = `${owner === "player" ? "your" : "a"} ${data.combo_name}`;
-        });
+        document.getElementById("player_combo_img").src = `/static/img/animals/${player_combo} fighting.jpg`;
+        document.getElementById("player_combo_img").alt= `an angry ${player_combo} that's ready to fight`;
+
+        document.getElementById("computer_combo_img").src = `/static/img/animals/${computer_combo} fighting.jpg`;
+        document.getElementById("computer_combo_img").alt= `an angry ${computer_combo} that's ready to fight`;
+        console.log(`It's ${player_combo} vs ${computer_combo}!!`);
+
+        document.getElementById("computer_combo_img").classList.add("flip"); 
+        
     })
     .catch(error => console.error(`Error getting ${owner} combo:`, error));
 }
