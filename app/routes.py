@@ -41,14 +41,16 @@ def get_combo():
     
     if element is None:
         element = get_random_element()
+        computer_animal = data.get("computer_animal")
+        computer_combo_name, computer_combo_image = get_combo_animal(animal, element)
 
-
-
-    combo_name, combo_image = get_combo_animal(animal, element)
+    player_combo_name, player_combo_image = get_combo_animal(computer_animal, element)
     
     return jsonify({
-        "combo_name": combo_name,
-        "combo_image": combo_image,
+        "player_combo_name": player_combo_name,
+        "player_combo_image": player_combo_image,
+        "computer_combo_name": computer_combo_name,
+        "computer_combo_image": computer_combo_image,
         "element": element
     })
 
