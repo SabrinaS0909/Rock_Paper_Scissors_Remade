@@ -140,8 +140,10 @@
                 <button class = "continue_four">:O</button>
             </div>
             <div class = "element_animal_five" id = "element_animal_five">
-                <h1>It's {player_combo_animal} vs {computer_combo_animal}!!!</h1>
-                <img><!--player combo animal image--> <img><!--vs image--> <img><!--computer combo animal image-->
+                <h1 id = "combo_message"></h1>
+                <img id = "player_combo_img">
+                <img class = "vs" src="{{ url_for('static', filename='img/accessory_imgs/vs.png') }}" alt="vs">
+                <img id = "computer_combo_img">
                 <br><button>Let's go!</button>
             </div>
         </div>
