@@ -208,6 +208,18 @@ function getComboAnimal(animal, element = null, owner) {
     })
     .then(response => response.json())
     .then(data => {
+        const comboTextClass = owner === "player" ? ".player_combo_text" : ".computer_combo_text";
+        const comboImgClass = owner === "player" ? ".player_combo_img" : ".computer_combo_img";
+
+        document.querySelectorAll(comboTextClass).forEach(el => {
+            el.textContent = data.combo_name;
+        });
+
+        document.querySelectorAll(comboImgClass).forEach(el => {
+            el.src = data.combo_image;
+            el.alt = `${owner === "player" ? "your" : "a"} ${data.combo_name}`;
+        });
+
         player_combo = data.combo_name;
         computer_combo = data.combo_name;
 
@@ -223,6 +235,7 @@ function getComboAnimal(animal, element = null, owner) {
 
         document.getElementById("computer_combo_img").classList.add("flip"); 
         
+    
     })
     .catch(error => console.error(`Error getting ${owner} combo:`, error));
 }
