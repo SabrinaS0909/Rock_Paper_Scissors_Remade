@@ -35,24 +35,32 @@ def get_outcome():
 
 @app.route("/get_combo", methods = ["POST"])
 def get_combo():
-    data = request.get_json()
-    animal = data.get("animal")
-    element = data.get("element")
-    
-    if element is None:
-        element = get_random_element()
-        computer_animal = data.get("computer_animal")
-        computer_combo_name, computer_combo_image = get_combo_animal(animal, element)
+    try:
+        data = request.get_json()
+        print("DATA RECEIVED:", data)
 
-    player_combo_name, player_combo_image = get_combo_animal(computer_animal, element)
+        animal = data.get("animal")
+        element = data.get("element")
+        computer_animal = data.get("computer_animal")
     
-    return jsonify({
-        "player_combo_name": player_combo_name,
-        "player_combo_image": player_combo_image,
-        "computer_combo_name": computer_combo_name,
-        "computer_combo_image": computer_combo_image,
-        "element": element
-    })
+        if element is None:
+            element = get_random_element()        
+
+        player_combo_name, player_combo_image = get_combo_animal(animal, element)
+        computer_combo_name, computer_combo_image = get_combo_animal(computer_animal, element)
+    
+        return jsonify({
+            "player_combo_name": player_combo_name,
+            "player_combo_image": player_combo_image,
+            "computer_combo_name": computer_combo_name,
+            "computer_combo_image": computer_combo_image,
+            "element": element
+        })
+    
+    except Exception as e:
+        print("ERROR in /get_combo:", e)
+        return jsonify({"error": str(e)}), 500
+
 
 
 print("routes is working")  
