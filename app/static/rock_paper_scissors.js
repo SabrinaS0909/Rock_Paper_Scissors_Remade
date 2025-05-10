@@ -223,7 +223,7 @@ function getComboAnimal(animal, element = null, computer_animal = null) {
         document.getElementById("computer_combo_img").src = `/static/img/animals/${computer_combo} fighting.jpg`;
         document.getElementById("computer_combo_img").alt= `an angry ${computer_combo} that's ready to fight`;
 
-        document.getElementById("computer_combo_img").classList.add("flip"); 
+        document.getElementById("computer_combo_img").classList.add("flip");  
     })
     .catch(error => console.error(`Error getting ${owner} combo:`, error));
 }
