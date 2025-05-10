@@ -139,4 +139,4 @@ def get_random_element():
 def get_combo_animal(animal, element):
     combo_name = element_animals_map.get((animal, element), "an unknown creature")
     combo_image = f"/static/img/element_combos/{animal}_{element}.png"
-    return combo_name, combo_image 
+    return combo_name, combo_image  
