@@ -54,7 +54,7 @@ def get_combo():
             "player_combo_image": player_combo_image,
             "computer_combo_name": computer_combo_name,
             "computer_combo_image": computer_combo_image, 
-            "element": element
+            "element": element 
         })
     
     except Exception as e:
