@@ -225,5 +225,5 @@ function getComboAnimal(animal, element = null, computer_animal = null) {
 
         document.getElementById("computer_combo_img").classList.add("flip");  
     })
-    .catch(error => console.error(`Error getting ${owner} combo:`, error));
+    .catch(error => console.error(`Error getting ${owner} combo:`, error));  
 }
