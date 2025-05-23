@@ -133,10 +133,10 @@ def outcome(player_action, computer_action):
 
 #I want to log what outcomes a player has already experienced, and prevent them from happening again until at least 3-5 turns later.
 
-def get_random_element():
-    return random.choice(["water", "fire", "earth", "air"])
-
-def get_combo_animal(animal, element):
-    combo_name = element_animals_map.get((animal, element), "an unknown creature")
-    combo_image = f"/static/img/element_combos/{animal}_{element}.png"
-    return combo_name, combo_image   
+def get_combo_animals(data):
+    possible_elements = ["water", "fire", "earth", "air"]
+    computer_element = random.choice(possible_elements)
+    player_combo = element_animals_map.get((data["animal"], data["element"]))
+    computer_combo = element_animals_map.get((data["animal", computer_element]))
+    print(player_combo, computer_combo)
+    return player_combo, computer_combo
