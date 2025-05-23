@@ -213,33 +213,33 @@ function getComboAnimal() {
 
         //"You've turned into..."
         const player_combo_message = `${player_combo}!!`;
-        document.getElementById("").textContent = player_combo_message;
+        document.getElementById("player_combo_text").textContent = player_combo_message;
 
-        document.getElementById("").src = `/static/img/element_combos/${player_combo}.png`;
-        document.getElementById("").alt= `${player_combo}`;
+        document.getElementById("player_combo_img").src = `/static/img/element_combos/${player_combo}.png`;
+        document.getElementById("player_combo_img").alt= `${player_combo}`;
 
         console.log(`You've become ${player_combo}!!`);
 
         //"And your opponent has turned into..." display
         const computer_combo_message = `${computer_combo}!!`;
-        document.getElementById("").textContent = computer_combo_message;
+        document.getElementById("computer_combo_text").textContent = computer_combo_message;
 
-        document.getElementById("").src = `/static/img/element_combos/${computer_combo}.png`;
-        document.getElementById("").alt= `${computer_combo}`;
+        document.getElementById("computer_combo_img").src = `/static/img/element_combos/${computer_combo}.png`;
+        document.getElementById("computer_combo_img").alt= `${computer_combo}`;
         console.log(`And your opponent has become ${computer_combo}!!`);
         
         //"vs" display
         const message = `It's ${player_combo} vs ${computer_combo}!!`;
         document.getElementById("combo_message").textContent = message;
 
-        document.getElementById("").src = `/static/img/element_combos/${player_combo} fighting.png`;
-        document.getElementById("").alt= `an angry ${player_combo} that's ready to fight`;
+        document.getElementById("fighting_player_combo_img").src = `/static/img/element_combos/${player_combo} fighting.png`;
+        document.getElementById("fighting_player_combo_img").alt= `an angry ${player_combo} that's ready to fight`;
 
-        document.getElementById("").src = `/static/img/element_combos/${computer_combo} fighting.png`;
-        document.getElementById("").alt= `an angry ${computer_combo} that's ready to fight`;
+        document.getElementById("fighting_computer_combo_img").src = `/static/img/element_combos/${computer_combo} fighting.png`;
+        document.getElementById("fighting_computer_combo_img").alt= `an angry ${computer_combo} that's ready to fight`;
         console.log(`It's ${data.player_combo} vs ${data.computer_combo}!!`);
 
-        document.getElementById("").classList.add("flip"); 
+        document.getElementById("fighting_computer_combo_img").classList.add("flip"); 
     })
     .catch(error => console.error("Error:", error));
 }
