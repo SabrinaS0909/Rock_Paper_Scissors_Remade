@@ -1,6 +1,6 @@
 from app import app
 from flask import render_template, request, jsonify
-from app.utils import get_animal_choices, random_button, outcome, element_animals_map, get_random_element, get_combo_animal
+from app.utils import get_animal_choices, random_button, outcome, get_combo_animals
 
 @app.route('/')
 def index():
@@ -33,6 +33,10 @@ def get_outcome():
         "result": result
     })
 
-@app.route("/get_combo", methods = ["POST"])
-def get_combo():
-    print("routes.py get_combo function is working")
+@app.route("/get_combos", methods = ["POST"])
+def get_combos():
+    data = request.get_json()
+    player_combo, computer_combo = get_combo_animals(data)
+    print(f"It's {player_combo} vs {computer_combo}!!")
+    return jsonify ({"player_combo": player_combo, "computer_combo": computer_combo})
+
