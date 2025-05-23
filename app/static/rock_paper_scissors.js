@@ -3,12 +3,10 @@ document.addEventListener("DOMContentLoaded", function () {
     var starting_grounds = document.getElementById("start");
     var confirm_close = document.querySelector(".confirm_close");
     var outcome_window = document.getElementById("outcome");
-    let player_action = null;
-    let computer_action = null;
 
     document.querySelectorAll(".animal_button").forEach(button => {
         button.addEventListener("click", function () {
-            console.log("Button clicked: " + this.dataset.animal);
+            console.log("Animal Button Clicked: " + this.dataset.animal);
             sendDataToBackend(this.dataset.animal);
             starting_grounds.style.display = "none";
             document.getElementById("animal_chosen").style.display = "block";
@@ -17,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.querySelectorAll(".lets_go").forEach(button => {
         button.addEventListener("click", function () {
-            console.log("Rando Button Clicked");
+            console.log("Fight Initiated!");
             document.getElementById("animal_chosen").style.display = "none";
             outcome_window.style.display = "block";
             
@@ -27,14 +25,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.querySelectorAll(".element_button").forEach(button => {
         button.addEventListener("click", function () {
-            const player_element = this.dataset.element;
-            console.log("Element Button Clicked: " + player_element);
+            console.log("Element Button Clicked: " + this.dataset.element);
+
+            getComboAnimal(this.dataset.animal, this.dataset.element);
 
             document.getElementById("tie").style.display = "none";
             document.getElementById("element_animal").style.display = "block";
             document.getElementById("element_animal_one").style.display = "block";
-
-            getComboAnimal(player_action, player_element, computer_action);
         });
     });
     document.querySelectorAll(".continue_one").forEach(button => {
@@ -100,6 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //All functions that send data to the backend
 let player_action, computer_action
+let player_combo, computer_combo
 
 function sendDataToBackend(animal) {
     fetch("/animal_click", {
@@ -203,5 +201,45 @@ function sendOutcomeToBackend() {
 }
 
 function getComboAnimal() {
-    console.log("Javascript getComboAnimal is working")
+    fetch("/get_combos", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ player_combo: player_combo, computer_combo: computer_combo })
+    })
+    .then(response => response.json())
+    .then(data => {
+        player_combo = data.player_combo;
+        computer_combo = data.computer_combo;
+
+        //"You've turned into..."
+        const player_combo_message = `${player_combo}!!`;
+        document.getElementById("").textContent = player_combo_message;
+
+        document.getElementById("").src = `/static/img/element_combos/${player_combo}.png`;
+        document.getElementById("").alt= `${player_combo}`;
+
+        console.log(`You've become ${player_combo}!!`);
+
+        //"And your opponent has turned into..." display
+        const computer_combo_message = `${computer_combo}!!`;
+        document.getElementById("").textContent = computer_combo_message;
+
+        document.getElementById("").src = `/static/img/element_combos/${computer_combo}.png`;
+        document.getElementById("").alt= `${computer_combo}`;
+        console.log(`And your opponent has become ${computer_combo}!!`);
+        
+        //"vs" display
+        const message = `It's ${player_combo} vs ${computer_combo}!!`;
+        document.getElementById("combo_message").textContent = message;
+
+        document.getElementById("").src = `/static/img/element_combos/${player_combo} fighting.png`;
+        document.getElementById("").alt= `an angry ${player_combo} that's ready to fight`;
+
+        document.getElementById("").src = `/static/img/element_combos/${computer_combo} fighting.png`;
+        document.getElementById("").alt= `an angry ${computer_combo} that's ready to fight`;
+        console.log(`It's ${data.player_combo} vs ${data.computer_combo}!!`);
+
+        document.getElementById("").classList.add("flip"); 
+    })
+    .catch(error => console.error("Error:", error));
 }
