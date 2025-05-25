@@ -1,8 +1,11 @@
 //All Button Clicks
 document.addEventListener("DOMContentLoaded", function () {
-    var starting_grounds = document.getElementById("start");
-    var confirm_close = document.querySelector(".confirm_close");
-    var outcome_window = document.getElementById("outcome");
+    const starting_grounds = document.getElementById("start");
+    const confirm_close = document.querySelector(".confirm_close");
+    const outcome_window = document.getElementById("outcome");
+
+    let animal = null;
+    let element = null;
 
     document.querySelectorAll(".animal_button").forEach(button => {
         button.addEventListener("click", function () {
@@ -25,9 +28,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.querySelectorAll(".element_button").forEach(button => {
         button.addEventListener("click", function () {
-            console.log("Element Button Clicked: " + this.dataset.element);
+            animal = this.dataset.animal;
+            element = this.dataset.element;
+            
+            console.log("Element Button Clicked: " + element);
 
-            getComboAnimal(this.dataset.animal, this.dataset.element);
+            getComboAnimal(animal, element);
 
             document.getElementById("tie").style.display = "none";
             document.getElementById("element_animal").style.display = "block";
@@ -45,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("element_animal_two").style.display = "none";
             document.getElementById("element_animal_three").style.display = "block";
 
-            getComboAnimal(computer_action, null, player_action);
+            getComboAnimal(animal, element);
         });
     });
     document.querySelectorAll(".continue_three").forEach(button => {
@@ -204,7 +210,7 @@ function getComboAnimal(animal, element) {
     fetch("/get_combos", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ animal: animal, element: element })
+        body: JSON.stringify({ animal, element })
     })
     .then(response => response.json())
     .then(data => {
