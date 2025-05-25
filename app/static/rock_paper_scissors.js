@@ -1,11 +1,11 @@
+let animal = null;
+let element = null;
+
 //All Button Clicks
 document.addEventListener("DOMContentLoaded", function () {
     const starting_grounds = document.getElementById("start");
     const confirm_close = document.querySelector(".confirm_close");
     const outcome_window = document.getElementById("outcome");
-
-    let animal = null;
-    let element = null;
 
     document.querySelectorAll(".animal_button").forEach(button => {
         button.addEventListener("click", function () {
@@ -106,6 +106,8 @@ let player_action, computer_action
 let player_combo, computer_combo
 
 function sendDataToBackend(animal) {
+    animal = animal;
+
     fetch("/animal_click", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -207,6 +209,10 @@ function sendOutcomeToBackend() {
 }
 
 function getComboAnimal(animal, element) {
+    animal = animal;
+
+    console.log("Sending combo request:", { animal, element });
+
     fetch("/get_combos", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
