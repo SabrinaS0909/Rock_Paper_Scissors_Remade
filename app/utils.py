@@ -135,8 +135,16 @@ def outcome(player_action, computer_action):
 
 def get_combo_animals(data):
     possible_elements = ["water", "fire", "earth", "air"]
+    animal = data.get("animal")
+    element = data.get("element")
+
+    if not animal or not element:
+        print("Missing animal or element:", animal, element)
+        return "unknown", "unknown"
+    
     computer_element = random.choice(possible_elements)
-    player_combo = element_animals_map.get((data["animal"], data["element"]))
-    computer_combo = element_animals_map.get((data["animal"], computer_element))
+    player_combo = element_animals_map.get((animal, element), "unknown")
+    computer_combo = element_animals_map.get((animal, computer_element), "unknown")
+    
     print(player_combo, computer_combo)
     return player_combo, computer_combo

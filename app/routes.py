@@ -38,5 +38,7 @@ def get_combos():
     data = request.get_json()
     player_combo, computer_combo = get_combo_animals(data)
     print(f"It's {player_combo} vs {computer_combo}!!")
+    print("Data received:", data)
+    print("Combo results:", player_combo, computer_combo)
     return jsonify ({"player_combo": player_combo, "computer_combo": computer_combo})
 
