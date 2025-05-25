@@ -137,6 +137,6 @@ def get_combo_animals(data):
     possible_elements = ["water", "fire", "earth", "air"]
     computer_element = random.choice(possible_elements)
     player_combo = element_animals_map.get((data["animal"], data["element"]))
-    computer_combo = element_animals_map.get((data["animal", computer_element]))
+    computer_combo = element_animals_map.get((data["animal"], computer_element))
     print(player_combo, computer_combo)
     return player_combo, computer_combo
