@@ -200,16 +200,16 @@ function sendOutcomeToBackend() {
     .catch(error => console.error("Error:", error));
 }
 
-function getComboAnimal() {
+function getComboAnimal(animal, element) {
     fetch("/get_combos", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ player_combo: player_combo, computer_combo: computer_combo })
+        body: JSON.stringify({ animal: animal, element: element })
     })
     .then(response => response.json())
     .then(data => {
-        player_combo = data.player_combo;
-        computer_combo = data.computer_combo;
+        const player_combo = data.player_combo;
+        const computer_combo = data.computer_combo;
 
         //"You've turned into..."
         const player_combo_message = `${player_combo}!!`;
