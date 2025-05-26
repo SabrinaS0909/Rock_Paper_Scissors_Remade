@@ -120,10 +120,10 @@ function sendDataToBackend(selectedAnimal) {
         const message = `It's ${player_action} vs ${computer_action}!!`;
         document.getElementById("game_message").textContent = message;
 
-        document.getElementById("player_choice_img").src = `/static/img/animals/${player_action} fighting.jpg`;
+        document.getElementById("player_choice_img").src = `/static/img/animals/${player_action} fighting.png`;
         document.getElementById("player_choice_img").alt= `an angry ${player_action} that's ready to fight`;
 
-        document.getElementById("computer_choice_img").src = `/static/img/animals/${computer_action} fighting.jpg`;
+        document.getElementById("computer_choice_img").src = `/static/img/animals/${computer_action} fighting.png`;
         document.getElementById("computer_choice_img").alt= `an angry ${computer_action} that's ready to fight`;
         console.log(`It's ${data.player} vs ${data.computer}!!`);
 
@@ -245,10 +245,10 @@ function getComboAnimal(selectedAnimal, selectedElement) {
         document.getElementById("combo_message").textContent = message;
 
         document.getElementById("fighting_player_combo_img").src = `/static/img/element_combos/${player_combo} fighting.png`;
-        document.getElementById("fighting_player_combo_img").alt= `an angry ${player_combo} that's ready to fight`;
+        document.getElementById("fighting_player_combo_img").alt= `${player_combo} that's angry and ready to fight`;
 
         document.getElementById("fighting_computer_combo_img").src = `/static/img/element_combos/${computer_combo} fighting.png`;
-        document.getElementById("fighting_computer_combo_img").alt= `an angry ${computer_combo} that's ready to fight`;
+        document.getElementById("fighting_computer_combo_img").alt= `${computer_combo} that's angry and ready to fight`;
         console.log(`It's ${data.player_combo} vs ${data.computer_combo}!!`);
 
         document.getElementById("fighting_computer_combo_img").classList.add("flip"); 
