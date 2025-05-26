@@ -80,7 +80,7 @@ element_animals_map = {
     ("bee", "water"): ("a Baltic isopod"),
     ("bee", "fire"): ("a wasp"),
     ("bee", "earth"): ("a scorpion"),
-    ("bee", "air"): ("a bumble bee"),
+    ("bee", "air"): ("a bumblebee"),
 
     ("bun", "water"): ("a sea bunny"),
     ("bun", "fire"): ("a desert jackrabbit"),
@@ -145,6 +145,6 @@ def get_combo_animals(data):
     computer_element = random.choice(possible_elements)
     player_combo = element_animals_map.get((animal, element), "unknown")
     computer_combo = element_animals_map.get((animal, computer_element), "unknown")
-    
+
     print(player_combo, computer_combo)
     return player_combo, computer_combo
