@@ -28,7 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.querySelectorAll(".element_button").forEach(button => {
         button.addEventListener("click", function () {
-            animal = this.dataset.animal;
             element = this.dataset.element;
             
             console.log("Element Button Clicked: " + element);
@@ -105,8 +104,8 @@ document.addEventListener("DOMContentLoaded", function () {
 let player_action, computer_action
 let player_combo, computer_combo
 
-function sendDataToBackend(animal) {
-    animal = animal;
+function sendDataToBackend(selectedAnimal) {
+    animal = selectedAnimal;
 
     fetch("/animal_click", {
         method: "POST",
@@ -208,8 +207,9 @@ function sendOutcomeToBackend() {
     .catch(error => console.error("Error:", error));
 }
 
-function getComboAnimal(animal, element) {
-    animal = animal;
+function getComboAnimal(selectedAnimal, selectedElement) {
+    animal = selectedAnimal;
+    element = selectedElement;
 
     console.log("Sending combo request:", { animal, element });
 
