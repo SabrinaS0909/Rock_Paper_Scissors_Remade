@@ -65,6 +65,12 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("element_animal_five").style.display = "block";
         });
     });
+    document.querySelectorAll(".element_outcome_button").forEach(button => {
+        button.addEventListener("click", function () {
+            document.getElementById("element_animal_five").style.display = "none";
+            document.getElementById("element_outcome").style.display = "block";
+        });
+    });
 
     document.querySelectorAll(".close_game").forEach(button => {
         button.addEventListener("click", function () {
