@@ -228,23 +228,30 @@ function getComboAnimal(selectedAnimal, selectedElement) {
     .then(data => {
         const player_combo = data.player_combo;
         const computer_combo = data.computer_combo;
+        let article
+        if (["a", "e", "i", "o", "u"].includes(Array.from(player_combo)[0].toLowerCase())) {
+            const a = "a "
+        }
+        else {
+            const an = "an "
+        }
 
         //"You've turned into..."
-        const player_combo_message = `${player_combo}!!`;
+        const player_combo_message = `${article}${player_combo}!!`;
         document.getElementById("player_combo_text").textContent = player_combo_message;
 
         document.getElementById("player_combo_img").src = `/static/img/element_combos/${player_combo}.png`;
-        document.getElementById("player_combo_img").alt= `${player_combo}`;
+        document.getElementById("player_combo_img").alt= `$${article}{player_combo}`;
 
-        console.log(`You've become ${player_combo}!!`);
+        console.log(`You've become ${article}${player_combo}!!`);
 
         //"And your opponent has turned into..." display
-        const computer_combo_message = `${computer_combo}!!`;
+        const computer_combo_message = `${article}${computer_combo}!!`;
         document.getElementById("computer_combo_text").textContent = computer_combo_message;
 
         document.getElementById("computer_combo_img").src = `/static/img/element_combos/${computer_combo}.png`;
-        document.getElementById("computer_combo_img").alt= `${computer_combo}`;
-        console.log(`And your opponent has become ${computer_combo}!!`);
+        document.getElementById("computer_combo_img").alt= `${article}${computer_combo}`;
+        console.log(`And your opponent has become ${article}${computer_combo}!!`);
         
         //"vs" display
         const message = `It's ${player_combo} vs ${computer_combo}!!`;
