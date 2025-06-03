@@ -252,3 +252,16 @@ button:hover {
 .element_outcome {
   display: none;
 }
+.element_animal_text {
+  font-size: 25px;
+}
+.c {
+  border: 5px white solid;
+  border-radius: 25px;
+  display: inline-block;
+ }
+.d {
+  background: 3px rgb(141, 232, 255);
+  border-radius: 25px;
+  display: block;
+}
