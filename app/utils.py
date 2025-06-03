@@ -77,35 +77,35 @@ animal_outcomes_map = {
 }
 
 element_animals_map = {
-    ("bee", "water"): ("a Baltic isopod"),
-    ("bee", "fire"): ("a wasp"),
-    ("bee", "earth"): ("a scorpion"),
-    ("bee", "air"): ("a bumblebee"),
+    ("bee", "water"): ("Baltic isopod"),
+    ("bee", "fire"): ("wasp"),
+    ("bee", "earth"): ("scorpion"),
+    ("bee", "air"): ("bumblebee"),
 
-    ("bun", "water"): ("a sea bunny"),
-    ("bun", "fire"): ("a desert jackrabbit"),
-    ("bun", "earth"): ("a Flemish giant rabbit"),
-    ("bun", "air"): ("a Netherland Dwarf rabbit"),
+    ("bun", "water"): ("sea bunny"),
+    ("bun", "fire"): ("desert jackrabbit"),
+    ("bun", "earth"): ("Flemish giant rabbit"),
+    ("bun", "air"): ("Netherland Dwarf rabbit"),
 
-    ("corvid", "water"): ("a crow"),
-    ("corvid", "fire"): ("a jay"),
-    ("corvid", "earth"): ("a raven"),
-    ("corvid", "air"): ("a magpie"),
+    ("corvid", "water"): ("crow"),
+    ("corvid", "fire"): ("jay"),
+    ("corvid", "earth"): ("raven"),
+    ("corvid", "air"): ("magpie"),
 
-    ("cat", "water"): ("a jaguar"),
-    ("cat", "fire"): ("a tiger"),
-    ("cat", "earth"): ("a lion"),
-    ("cat", "air"): ("a snow leopard"),
+    ("cat", "water"): ("jaguar"),
+    ("cat", "fire"): ("tiger"),
+    ("cat", "earth"): ("lion"),
+    ("cat", "air"): ("snow leopard"),
 
-    ("wolf", "water"): ("a coastal wolf"),
-    ("wolf", "fire"): ("a Maine wolf"),
-    ("wolf", "earth"): ("a grey wolf"),
-    ("wolf", "air"): ("an arctic wolf"),
+    ("wolf", "water"): ("coastal wolf"),
+    ("wolf", "fire"): ("Maine wolf"),
+    ("wolf", "earth"): ("grey wolf"),
+    ("wolf", "air"): ("arctic wolf"),
 
-    ("human", "water"): ("a marine biologist"),
-    ("human", "fire"): ("a firefighter"),
-    ("human", "earth"): ("a geologist"),
-    ("human", "air"): ("an aircraft pilot"),
+    ("human", "water"): ("marine biologist"),
+    ("human", "fire"): ("firefighter"),
+    ("human", "earth"): ("geologist"),
+    ("human", "air"): ("aircraft pilot"),
 }
 
 def get_animal_choices(data):
