@@ -122,11 +122,15 @@
         </div>
         <div class = "element_animal" id = "element_animal">   
             <div class = "element_animal_one" id = "element_animal_one">
-                <p class = "element_animal_text">Congrats! You've become...</p>
+                <p class = "element_animal_text"><b>Congrats!</b> <br><br>You've become...</p>
                 <button class = "continue_one">Tell me, tell me, tell me!</button>
             </div>
             <div class = "element_animal_two" id = "element_animal_two">
-                <img class = "player_combo_img" id = "player_combo_img">
+                <div class = "c">
+                    <div class = "d">
+                        <img class = "player_combo_img" id = "player_combo_img">
+                    </div>
+                </div>
                 <p class = "player_combo_text" id = "player_combo_text"></p>
                 <button class = "continue_two">Sweet!</button>
             </div>
@@ -135,15 +139,27 @@
                 <button class = "continue_three">Oh no... what?</button>
             </div>
             <div class = "element_animal_four" id = "element_animal_four">
-                <img class = "computer_combo_img" id = "computer_combo_img">
+                <div class = "c">
+                    <div class = "d">
+                        <img class = "computer_combo_img" id = "computer_combo_img">
+                    </div>
+                </div>
                 <p class = "computer_combo_text" id = "computer_combo_text"></p>
                 <button class = "continue_four">:O</button>
             </div>
             <div class = "element_animal_five" id = "element_animal_five">
                 <h1 id = "combo_message"></h1>
-                <img id = "fighting_player_combo_img">
+                <div class = "c">
+                    <div class = "d">
+                        <img id = "fighting_player_combo_img">
+                    </div>
+                </div>
                 <img class = "vs" src="{{ url_for('static', filename='img/accessory_imgs/vs.png') }}" alt="vs">
-                <img id = "fighting_computer_combo_img">
+                <div class = "c">
+                    <div class = "d">
+                        <img id = "fighting_computer_combo_img">
+                    </div>
+                </div>
                 <br><button class="element_outcome_button">Let's go!</button>
             </div>
             <div id = "element_outcome" class = "element_outcome">
