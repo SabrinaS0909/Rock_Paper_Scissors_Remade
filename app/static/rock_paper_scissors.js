@@ -230,10 +230,10 @@ function getComboAnimal(selectedAnimal, selectedElement) {
         const computer_combo = data.computer_combo;
         let article
         if (["a", "e", "i", "o", "u"].includes(Array.from(player_combo)[0].toLowerCase())) {
-            const a = "a "
+            article = "an "
         }
         else {
-            const an = "an "
+            article = "a "
         }
 
         //"You've turned into..."
