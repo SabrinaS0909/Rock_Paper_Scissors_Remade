@@ -267,4 +267,4 @@ function getComboAnimal(selectedAnimal, selectedElement) {
         document.getElementById("fighting_computer_combo_img").classList.add("flip"); 
     })
     .catch(error => console.error("Error:", error));
-}
+} 
