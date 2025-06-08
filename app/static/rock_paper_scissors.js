@@ -264,7 +264,10 @@ function getComboAnimal(selectedAnimal, selectedElement) {
         document.getElementById("fighting_computer_combo_img").alt= `${computer_combo} that's angry and ready to fight`;
         console.log(`It's ${data.player_combo} vs ${data.computer_combo}!!`);
 
-        document.getElementById("fighting_computer_combo_img").classList.add("flip"); 
+        document.getElementById("fighting_computer_combo_img").classList.add("flip");
+        
+        //outcome display
+        
     })
     .catch(error => console.error("Error:", error));
 } 
