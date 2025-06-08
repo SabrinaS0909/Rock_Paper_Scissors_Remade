@@ -176,3 +176,15 @@ def get_combo_animals(data):
 
     print(player_combo, computer_combo)
     return player_combo, computer_combo
+
+def combo_outcome(player_combo, computer_combo):
+    print("combo_outcome function is working")
+
+    key = (player_combo, computer_combo)
+
+    if key not in element_outcomes_map:
+        raise ValueError(f"Unexpected input: player = {player_combo}, computer = {computer_combo}")
+    
+    result = element_outcomes_map[key]
+
+    return random.choice(result) if isinstance(result, list) else result
