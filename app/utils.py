@@ -108,6 +108,34 @@ element_animals_map = {
     ("human", "air"): ("aircraft pilot"),
 }
 
+element_outcomes_map = {
+    ("water", "water"): ("Tie", "tie"),
+    ("water", "fire"): ("You win!", "win"),
+    ("water", "air"): ("You lose!", "lose"),
+    ("water", "earth"): [("You win!", "win"),
+                         ("You lose!", "lose")],
+
+    ("fire", "water"): ("You lose!", "lose"),
+    ("fire", "fire"): ("Tie", "tie"),
+    ("fire", "air"): ("You win!", "win"),
+    ("fire", "earth"): [("You win!", "win"),
+                        ("You lose!", "lose")],
+
+    ("air", "water"): ("You lose!", "lose"),
+    ("air", "fire"): ("You win!", "win"),
+    ("air", "air"): ("Tie", "tie"),
+    ("air", "earth"): [("You win!", "win"),
+                       ("You lose!", "lose")],
+
+    ("earth", "water"): [("You win!", "win"),
+                         ("You lose!", "lose")],
+    ("earth", "fire"): [("You win!", "win"),
+                        ("You lose!", "lose")],
+    ("earth", "air"): [("You win!", "win"),
+                       ("You lose!", "lose")],
+    ("earth", "earth"): ("Tie", "tie"),
+}
+
 def get_animal_choices(data):
     player_action = data["animal"]
     possible_actions = ["bee"] #, "bun", "corvid", "cat", "wolf", "human"
