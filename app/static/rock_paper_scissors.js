@@ -310,14 +310,14 @@ function sendElementOutcome() {
 
         if (player_action == "earth") {
             if (computer_action == "earth") {
-                document.getElementById("winner_image").src = "/static/img/outcomes/human_vs_human.png";
+                document.getElementById("element_outcome_image").src = "/static/img/outcomes/human_vs_human.png";
             }
             else {
                 if (result == "win") {
-                    document.getElementById("winner_image").src = `/static/img/outcomes/${player_action}_vs_${computer_action}_win.png`;
+                    document.getElementById("element_outcome_image").src = `/static/img/animals/bee.png`;
                 }
                 else if (result == "lose") {
-                    document.getElementById("winner_image").src = `/static/img/outcomes/${player_action}_vs_${computer_action}_lose.png`;
+                    document.getElementById("element_outcome_image").src = `/static/img/animals/bun.png`;
                 }
                 else {
                     console.log("Something isn't right.")
@@ -325,19 +325,19 @@ function sendElementOutcome() {
             }
         }
         else {
-            if (computer_action == "human") {
+            if (computer_action == "earth") {
                 if (result == "win") {
-                    document.getElementById("winner_image").src = `/static/img/outcomes/${player_action}_vs_${computer_action}_win.png`;
+                    document.getElementById("element_outcome_image").src = `/static/img/animals/cat.png`;
                 }
                 else if (result == "lose") {
-                    document.getElementById("winner_image").src = `/static/img/outcomes/${player_action}_vs_${computer_action}_lose.png`;
+                    document.getElementById("element_outcome_image").src = `/static/img/animals/corvid.png`;
                 }
                 else {
                     console.log("Something isn't right.")
                 }                
             }
             else {
-                document.getElementById("winner_image").src = `/static/img/outcomes/${player_action}_vs_${computer_action}.png`;
+                document.getElementById("element_outcome_image").src = `/static/img/animals/wolf.png`;
             }
         };
     })
