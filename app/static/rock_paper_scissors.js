@@ -271,3 +271,75 @@ function getComboAnimal(selectedAnimal, selectedElement) {
     })
     .catch(error => console.error("Error:", error));
 } 
+
+function sendRandomButtonToBackend() {
+    fetch("/random_button", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" }
+    })
+    .then(response => response.json())
+    .then(data => {
+        const message = data.random_button;
+        document.getElementById("lets_go").textContent = message;
+        console.log(message);
+    })
+    .catch(error => console.error("Error:", error));
+} 
+
+function sendElementOutcome() {
+    fetch("/combo_outcome", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ player_combo: player_combo, computer_combo: computer_combo })
+    })
+    .then(response => response.json())
+    .then( data => {
+        const message = data.description;
+        const result = data.result;
+
+        if (result === "tie") {
+            document.getElementById("").style.display = "none";
+            document.getElementById("").style.display = "none";
+            document.getElementById("second_tie").style.display = "block";
+            return;
+        }
+
+        document.getElementById("element_outcome_dialogue").textContent = message;
+        console.log("Message:", message);
+        console.log("Result", result);
+
+        if (player_action == "earth") {
+            if (computer_action == "earth") {
+                document.getElementById("winner_image").src = "/static/img/outcomes/human_vs_human.png";
+            }
+            else {
+                if (result == "win") {
+                    document.getElementById("winner_image").src = `/static/img/outcomes/${player_action}_vs_${computer_action}_win.png`;
+                }
+                else if (result == "lose") {
+                    document.getElementById("winner_image").src = `/static/img/outcomes/${player_action}_vs_${computer_action}_lose.png`;
+                }
+                else {
+                    console.log("Something isn't right.")
+                }
+            }
+        }
+        else {
+            if (computer_action == "human") {
+                if (result == "win") {
+                    document.getElementById("winner_image").src = `/static/img/outcomes/${player_action}_vs_${computer_action}_win.png`;
+                }
+                else if (result == "lose") {
+                    document.getElementById("winner_image").src = `/static/img/outcomes/${player_action}_vs_${computer_action}_lose.png`;
+                }
+                else {
+                    console.log("Something isn't right.")
+                }                
+            }
+            else {
+                document.getElementById("winner_image").src = `/static/img/outcomes/${player_action}_vs_${computer_action}.png`;
+            }
+        };
+    })
+    .catch(error => console.error("Error:", error));
+}
