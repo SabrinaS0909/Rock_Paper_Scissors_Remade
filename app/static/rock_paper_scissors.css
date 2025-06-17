@@ -265,3 +265,7 @@ button:hover {
   border-radius: 25px;
   display: block;
 }
+
+.second_tie{
+  display: none;
+}
