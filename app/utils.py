@@ -175,7 +175,7 @@ def get_combo_animals(data):
     computer_combo = element_animals_map.get((animal, computer_element), "unknown")
 
     print(player_combo, computer_combo)
-    return player_combo, computer_combo
+    return player_combo, computer_combo, computer_element
 
 def combo_outcome(player_combo, computer_combo):
     print("combo_outcome function is working")
