@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
             
             console.log("Element Button Clicked: " + element);
 
-            getComboAnimal(animal, element);
+            getComboAnimalandOutcome(animal, element);
 
             document.getElementById("tie").style.display = "none";
             document.getElementById("element_animal").style.display = "block";
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("element_animal_two").style.display = "none";
             document.getElementById("element_animal_three").style.display = "block";
 
-            getComboAnimal(animal, element);
+            getComboAnimalandOutcome(animal, element);
         });
     });
     document.querySelectorAll(".continue_three").forEach(button => {
@@ -213,7 +213,7 @@ function sendOutcomeToBackend() {
     .catch(error => console.error("Error:", error));
 }
 
-function getComboAnimal(selectedAnimal, selectedElement) {
+function getComboAnimalandOutcome(selectedAnimal, selectedElement) {
     animal = selectedAnimal;
     element = selectedElement;
 
@@ -267,6 +267,52 @@ function getComboAnimal(selectedAnimal, selectedElement) {
         document.getElementById("fighting_computer_combo_img").classList.add("flip");
         
         //outcome display
+        const outcome_message = data.description;
+        const result = data.result;
+
+        if (result === "tie") {
+            document.getElementById("").style.display = "none";
+            document.getElementById("").style.display = "none";
+            document.getElementById("second_tie").style.display = "block";
+            return;
+        }
+
+        document.getElementById("element_outcome_dialogue").textContent = outcome_message;
+        console.log("Message:", outcome_message);
+        console.log("Result", result);
+
+        if (element == "earth") {
+            if (element == "earth") {
+                document.getElementById("element_outcome_image").src = "/static/img/outcomes/human_vs_human.png";
+            }
+            else {
+                if (result == "win") {
+                    document.getElementById("element_outcome_image").src = `/static/img/animals/bee.png`;
+                }
+                else if (result == "lose") {
+                    document.getElementById("element_outcome_image").src = `/static/img/animals/bun.png`;
+                }
+                else {
+                    console.log("Something isn't right.")
+                }
+            }
+        }
+        else {
+            if (element == "earth") {
+                if (result == "win") {
+                    document.getElementById("element_outcome_image").src = `/static/img/animals/cat.png`;
+                }
+                else if (result == "lose") {
+                    document.getElementById("element_outcome_image").src = `/static/img/animals/corvid.png`;
+                }
+                else {
+                    console.log("Something isn't right.")
+                }                
+            }
+            else {
+                document.getElementById("element_outcome_image").src = `/static/img/animals/wolf.png`;
+            }
+        };
         
     })
     .catch(error => console.error("Error:", error));
