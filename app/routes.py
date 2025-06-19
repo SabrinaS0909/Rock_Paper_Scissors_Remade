@@ -36,22 +36,17 @@ def get_outcome():
 @app.route("/get_combos", methods = ["POST"])
 def get_combos():
     data = request.get_json()
-    player_combo, computer_combo = get_combo_animals(data)
+    player_combo, computer_combo, computer_element = get_combo_animals(data)
+    
+    description, result = outcome(player_combo, computer_combo)
+    
     print(f"It's {player_combo} vs {computer_combo}!!")
     print("Data received:", data)
     print("Combo results:", player_combo, computer_combo)
-    return jsonify ({"player_combo": player_combo, "computer_combo": computer_combo})
 
-@app.route('/element_outcome', methods = ['POST'])
-def get_element_outcome():
-    data = request.get_json()
-    player_combo = data.get("player_combo")
-    computer_combo = data.get("computer_combo")
-    
-    description, result = outcome(player_combo, computer_combo)
-
-    print(description, result)
     return jsonify ({
+        "player_combo": player_combo, 
+        "computer_combo": computer_combo, 
+        "computer_element": computer_element,
         "description": description,
-        "result": result
-    })
+        "result": result})
