@@ -282,7 +282,7 @@ function getComboAnimalandOutcome(selectedAnimal, selectedElement) {
         console.log("Result", result);
 
         if (element == "earth") {
-            if (element == "earth") {
+            if (data.computer_element == "earth") {
                 document.getElementById("element_outcome_image").src = "/static/img/outcomes/human_vs_human.png";
             }
             else {
@@ -298,7 +298,7 @@ function getComboAnimalandOutcome(selectedAnimal, selectedElement) {
             }
         }
         else {
-            if (element == "earth") {
+            if (data.computer_element == "earth") {
                 if (result == "win") {
                     document.getElementById("element_outcome_image").src = `/static/img/animals/cat.png`;
                 }
@@ -328,64 +328,6 @@ function sendRandomButtonToBackend() {
         const message = data.random_button;
         document.getElementById("lets_go").textContent = message;
         console.log(message);
-    })
-    .catch(error => console.error("Error:", error));
-} 
-
-function sendElementOutcome() {
-    fetch("/combo_outcome", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ player_combo: player_combo, computer_combo: computer_combo })
-    })
-    .then(response => response.json())
-    .then( data => {
-        const message = data.description;
-        const result = data.result;
-
-        if (result === "tie") {
-            document.getElementById("").style.display = "none";
-            document.getElementById("").style.display = "none";
-            document.getElementById("second_tie").style.display = "block";
-            return;
-        }
-
-        document.getElementById("element_outcome_dialogue").textContent = message;
-        console.log("Message:", message);
-        console.log("Result", result);
-
-        if (player_action == "earth") {
-            if (computer_action == "earth") {
-                document.getElementById("element_outcome_image").src = "/static/img/outcomes/human_vs_human.png";
-            }
-            else {
-                if (result == "win") {
-                    document.getElementById("element_outcome_image").src = `/static/img/animals/bee.png`;
-                }
-                else if (result == "lose") {
-                    document.getElementById("element_outcome_image").src = `/static/img/animals/bun.png`;
-                }
-                else {
-                    console.log("Something isn't right.")
-                }
-            }
-        }
-        else {
-            if (computer_action == "earth") {
-                if (result == "win") {
-                    document.getElementById("element_outcome_image").src = `/static/img/animals/cat.png`;
-                }
-                else if (result == "lose") {
-                    document.getElementById("element_outcome_image").src = `/static/img/animals/corvid.png`;
-                }
-                else {
-                    console.log("Something isn't right.")
-                }                
-            }
-            else {
-                document.getElementById("element_outcome_image").src = `/static/img/animals/wolf.png`;
-            }
-        };
     })
     .catch(error => console.error("Error:", error));
 }
