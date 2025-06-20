@@ -36,10 +36,11 @@ def get_outcome():
 @app.route("/get_combos", methods = ["POST"])
 def get_combos():
     data = request.get_json()
-    player_combo, computer_combo, computer_element = get_combo_animals(data)
+    player_combo, computer_combo, computer_element, element = get_combo_animals(data)
     
-    description, result = outcome(player_combo, computer_combo)
+    description, result = combo_outcome(data)
     
+    print(f"You chose {element} and the opponent chose {computer_element}.")
     print(f"It's {player_combo} vs {computer_combo}!!")
     print("Data received:", data)
     print("Combo results:", player_combo, computer_combo)
@@ -48,5 +49,6 @@ def get_combos():
         "player_combo": player_combo, 
         "computer_combo": computer_combo, 
         "computer_element": computer_element,
+        "element": element,
         "description": description,
         "result": result})
