@@ -175,15 +175,17 @@ def get_combo_animals(data):
     computer_combo = element_animals_map.get((animal, computer_element), "unknown")
 
     print(player_combo, computer_combo)
-    return player_combo, computer_combo, computer_element
+    return player_combo, computer_combo, element, computer_element
 
-def combo_outcome(player_combo, computer_combo):
+def combo_outcome(data):
     print("combo_outcome function is working")
+    player_element = data.element
+    computer_element = data.computer_element
 
-    key = (player_combo, computer_combo)
+    key = (player_element, computer_element)
 
     if key not in element_outcomes_map:
-        raise ValueError(f"Unexpected input: player = {player_combo}, computer = {computer_combo}")
+        raise ValueError(f"Unexpected input: player = {player_element}, computer = {computer_element}")
     
     result = element_outcomes_map[key]
 
