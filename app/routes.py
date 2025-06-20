@@ -23,7 +23,7 @@ def get_random_button():
 def get_outcome():
     data = request.get_json()
     player_action = data.get("player_action")
-    computer_action = data.get("computer_action")
+    computer_action = data.get("computer_action") 
     
     description, result = outcome(player_action, computer_action)
 
