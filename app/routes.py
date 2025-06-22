@@ -38,7 +38,7 @@ def get_combos():
     data = request.get_json()
     player_combo, computer_combo, computer_element, element = get_combo_animals(data)
     
-    description, result = combo_outcome(data)
+    description, result = combo_outcome(data) 
     
     print(f"You chose {element} and the opponent chose {computer_element}.")
     print(f"It's {player_combo} vs {computer_combo}!!")
