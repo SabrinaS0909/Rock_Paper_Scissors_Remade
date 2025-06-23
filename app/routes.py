@@ -31,7 +31,7 @@ def get_outcome():
     return jsonify ({
         "description": description,
         "result": result
-    })
+    }) 
 
 @app.route("/get_combos", methods = ["POST"])
 def get_combos():
