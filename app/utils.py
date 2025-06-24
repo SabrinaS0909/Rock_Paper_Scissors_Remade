@@ -174,13 +174,13 @@ def get_combo_animals(data):
     player_combo = element_animals_map.get((animal, element), "unknown")
     computer_combo = element_animals_map.get((animal, computer_element), "unknown")
 
-    print(player_combo, computer_combo)
+    print(player_combo, computer_combo, element, computer_element)
     return player_combo, computer_combo, element, computer_element
 
 def combo_outcome(data):
     print("combo_outcome function is working")
-    player_element = data.element
-    computer_element = data.computer_element
+    player_element = data.get("element")
+    computer_element = data.get("computer_element")
 
     key = (player_element, computer_element)
 
