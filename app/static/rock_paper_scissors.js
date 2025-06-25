@@ -213,16 +213,17 @@ function sendOutcomeToBackend() {
     .catch(error => console.error("Error:", error));
 }
 
-function getComboAnimalandOutcome(selectedAnimal, selectedElement) {
+function getComboAnimalandOutcome(selectedAnimal, selectedElement, selectedComputerElement) {
     animal = selectedAnimal;
     element = selectedElement;
+    computer_element = selectedComputerElement;
 
-    console.log("Sending combo request:", { animal, element });
+    console.log("Sending combo request:", { animal, element, computer_element });
 
     fetch("/get_combos", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ animal, element })
+        body: JSON.stringify({ animal, element, computer_element })
     })
     .then(response => response.json())
     .then(data => {
@@ -315,7 +316,7 @@ function getComboAnimalandOutcome(selectedAnimal, selectedElement) {
         };
         
     })
-    .catch(error => console.error("Error:", error));
+    .catch(error => console.error("Error:", error)); 
 } 
 
 function sendRandomButtonToBackend() {
