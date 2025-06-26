@@ -299,7 +299,7 @@ function getComboAnimalandOutcome(selectedAnimal, selectedElement, selectedCompu
             }
         }
         else {
-            if (data.computer_element == "earth") {
+            if (data.computer_element == "earth") { 
                 if (result == "win") {
                     document.getElementById("element_outcome_image").src = `/static/img/animals/cat.png`;
                 }
