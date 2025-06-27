@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
             
             console.log("Element Button Clicked: " + element);
 
-            getComboAnimalandOutcome(animal, element);
+            getComboAnimalandOutcome(selectedAnimal, selectedElement, selectedComputerElement);
 
             document.getElementById("tie").style.display = "none";
             document.getElementById("element_animal").style.display = "block";
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("element_animal_two").style.display = "none";
             document.getElementById("element_animal_three").style.display = "block";
 
-            getComboAnimalandOutcome(animal, element);
+            getComboAnimalandOutcome(selectedAnimal, selectedElement, selectedComputerElement);
         });
     });
     document.querySelectorAll(".continue_three").forEach(button => {
