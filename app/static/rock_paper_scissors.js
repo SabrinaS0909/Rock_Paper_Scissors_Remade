@@ -1,5 +1,6 @@
 let animal = null;
 let element = null;
+let computerElement = null;
 
 //All Button Clicks
 document.addEventListener("DOMContentLoaded", function () {
@@ -32,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
             
             console.log("Element Button Clicked: " + element);
 
-            getComboAnimalandOutcome(selectedAnimal, selectedElement, selectedComputerElement);
+            getComboAnimalandOutcome(animal, element);
 
             document.getElementById("tie").style.display = "none";
             document.getElementById("element_animal").style.display = "block";
@@ -50,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("element_animal_two").style.display = "none";
             document.getElementById("element_animal_three").style.display = "block";
 
-            getComboAnimalandOutcome(selectedAnimal, selectedElement, selectedComputerElement);
+            getComboAnimalandOutcome(animal, element);
         });
     });
     document.querySelectorAll(".continue_three").forEach(button => {
@@ -213,17 +214,14 @@ function sendOutcomeToBackend() {
     .catch(error => console.error("Error:", error));
 }
 
-function getComboAnimalandOutcome(selectedAnimal, selectedElement, selectedComputerElement) {
-    animal = selectedAnimal;
-    element = selectedElement;
-    computer_element = selectedComputerElement;
+function getComboAnimalandOutcome(animal, element) {
 
-    console.log("Sending combo request:", { animal, element, computer_element });
+    console.log("Sending combo request:", { animal, element, computerElement });
 
     fetch("/get_combos", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ animal, element, computer_element })
+        body: JSON.stringify({ animal, element })
     })
     .then(response => response.json())
     .then(data => {
