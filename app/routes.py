@@ -36,7 +36,7 @@ def get_outcome():
 @app.route("/get_combos", methods = ["POST"])
 def get_combos():
     data = request.get_json()
-    player_combo, computer_combo, computer_element, element = get_combo_animals(data)
+    player_combo, computer_combo, element, computer_element = get_combo_animals(data)
     
     description, result = combo_outcome(data) 
     
