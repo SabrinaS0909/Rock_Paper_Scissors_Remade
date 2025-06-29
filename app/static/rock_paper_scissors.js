@@ -227,7 +227,7 @@ function getComboAnimalandOutcome(animal, element) {
     .then(data => {
         const player_combo = data.player_combo;
         const computer_combo = data.computer_combo;
-        let article
+        let article 
         if (["a", "e", "i", "o", "u"].includes(Array.from(player_combo)[0].toLowerCase())) {
             article = "an "
         }
