@@ -216,7 +216,7 @@ function sendOutcomeToBackend() {
 
 function getComboAnimalandOutcome(animal, element) {
 
-    console.log("Sending combo request:", { animal, element, computerElement });
+    console.log("Sending combo request:", { animal, element });
 
     fetch("/get_combos", {
         method: "POST",
