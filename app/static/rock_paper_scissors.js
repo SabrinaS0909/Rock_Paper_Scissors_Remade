@@ -269,9 +269,8 @@ function getComboAnimalandOutcome(animal, element) {
         const outcome_message = data.description;
         const result = data.result;
 
-        if (result === "tie") {
-            document.getElementById("").style.display = "none";
-            document.getElementById("").style.display = "none";
+        if (result === "tie") { //Will need to make it so you still get your reveals, vs display, then the second tie display
+            document.getElementById("element_animal").style.display = "none";
             document.getElementById("second_tie").style.display = "block";
             return;
         }
@@ -281,19 +280,14 @@ function getComboAnimalandOutcome(animal, element) {
         console.log("Result", result);
 
         if (element == "earth") {
-            if (data.computer_element == "earth") {
-                document.getElementById("element_outcome_image").src = "/static/img/outcomes/human_vs_human.png";
+            if (result == "win") {
+                document.getElementById("element_outcome_image").src = `/static/img/animals/bee.png`;
+            }
+            else if (result == "lose") {
+                document.getElementById("element_outcome_image").src = `/static/img/animals/bun.png`;
             }
             else {
-                if (result == "win") {
-                    document.getElementById("element_outcome_image").src = `/static/img/animals/bee.png`;
-                }
-                else if (result == "lose") {
-                    document.getElementById("element_outcome_image").src = `/static/img/animals/bun.png`;
-                }
-                else {
-                    console.log("Something isn't right.")
-                }
+                console.log("Something isn't right.")
             }
         }
         else {
@@ -309,7 +303,15 @@ function getComboAnimalandOutcome(animal, element) {
                 }                
             }
             else {
-                document.getElementById("element_outcome_image").src = `/static/img/animals/wolf.png`;
+                if (result == "win") {
+                    document.getElementById("element_outcome_image").src = `/static/img/animals/wolf.png`;
+                }
+                else if (result == "lose") {
+                    document.getElementById("element_outcome_image").src = `/static/img/animals/human.png`;
+                }
+                else {
+                    console.log("Something isn't right.")
+                }
             }
         };
         
