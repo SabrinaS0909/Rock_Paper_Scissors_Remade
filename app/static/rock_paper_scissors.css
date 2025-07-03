@@ -256,7 +256,7 @@ button:hover {
   font-size: 25px;
 }
 .c {
-  border: 5px white solid;
+  border: 5px white solid; 
   border-radius: 25px;
   display: inline-block;
  }
@@ -267,5 +267,5 @@ button:hover {
 }
 
 .second_tie{
-  display: none;
+  display: none; 
 }
