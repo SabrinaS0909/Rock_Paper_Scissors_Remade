@@ -228,7 +228,7 @@ button:hover {
   display: none;
   margin-top: 6em;
 }
-.player_combo_text, .computer_combo_text {
+.player_combo_text, .computer_combo_text, .thicc {
   font-size: 50px;
   font-weight: bold;
   text-shadow: 1px 1px 0 rgb(223, 227, 229), 4px 4px 0 rgba(0, 0, 0, 0.25);
@@ -253,6 +253,12 @@ button:hover {
   display: none;
 }
 .element_animal_text {
+  font-size: 25px;
+  margin-top: 200px;
+}
+.you_become {
+  margin-top: 100px; 
+  margin-bottom: 124px;
   font-size: 25px;
 }
 .c {
